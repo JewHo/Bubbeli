@@ -54,7 +54,12 @@
 column-count: 3;
 -webkit-column-width: 33%;
 -moz-column-width: 33%;
-column-width: 33%; }
+column-width: 33%;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-between;
+}
+
 .gallery .pics {
 -webkit-transition: all 350ms ease;
 transition: all 350ms ease; }
