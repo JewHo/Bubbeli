@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: 'Sebbefont';
-  src: url('/static/fonts/Sebbesmal-Regular.otf')  format('opentype'),
+  src: url('fonts/Sebbesmal-Regular.otf')  format('opentype'),
        local('Sebbefont');
 }
 
@@ -235,8 +235,8 @@ body {
   background-color: rgb(193,146,61);
   background-color: rgb(255,253,208);
   background-color: rgba(221,0,0,1);
-  background-image: url('/static/img/vaakuna.png');
-  background-image: linear-gradient(to bottom, rgba(220,220,220,0.6) 0%,rgba(220,220,220,0.6) 100%), url('/static/img/vaakuna.png');
+  background-image: url('img/vaakuna.png');
+  background-image: linear-gradient(to bottom, rgba(220,220,220,0.6) 0%,rgba(220,220,220,0.6) 100%), url('img/vaakuna.png');
   background-repeat: space repeat;
 }
 
@@ -6308,10 +6308,6 @@ button.bg-danger:focus {
 
 .bg-light {
   background-color: rgba(193, 146, 61, 0.9) !important;
-}
-
-.bg-cardboard {
-  background-image: url('/static/img/cardboard2.jpg') !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
