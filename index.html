@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.css" rel="stylesheet">
+    <link href="ekko-lightbox.css" rel="stylesheet">
 
   </head>
 
@@ -141,7 +142,7 @@
         </div>
         <div class="card shadow-lg">
           <div class="card-body">
-            <h2 class="card-title">Contact us using this form:</h2>
+            <h2 class="card-title">Contact using this form:</h2>
 
             <form name="contact" method="POST" data-netlify="true">
 
@@ -181,43 +182,57 @@
 
     <!-- Grid column -->
     <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery1.jpeg" alt="Card image cap">
+      <a href="img/bubbeligallery1.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery1.jpeg" alt="Card image cap">
+      </a>
     </div>
     <!-- Grid column -->
 
     <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/pargassebbe.jpg" alt="Card image cap">
+      <a href="img/pargassebbe.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/pargassebbe.jpg" alt="Card image cap">
+      </a>
     </div>
 
     <!-- Grid column -->
     <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery2.jpeg" alt="Card image cap">
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery3.jpeg" alt="Card image cap">
-    </div>
-    <!-- Grid column -->
-
-
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery4.jpeg" alt="Card image cap">
+      <a href="img/bubbeligallery2.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery2.jpeg" alt="Card image cap">
+      </a>
     </div>
     <!-- Grid column -->
 
     <!-- Grid column -->
     <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery5.jpeg" alt="Card image cap">
+      <a href="img/bubbeligallery3.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery3.jpeg" alt="Card image cap">
+      </a>
+    </div>
+    <!-- Grid column -->
+
+
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <a href="img/bubbeligallery4.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery4.jpeg" alt="Card image cap">
+      </a>
     </div>
     <!-- Grid column -->
 
     <!-- Grid column -->
     <div class="mb-3 pics animation all 1">
-      <img class="img-fluid" src="img/bubbeligallery6.jpeg" alt="Card image cap">
+      <a href="img/bubbeligallery5.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery5.jpeg" alt="Card image cap">
+      </a>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <a href="img/bubbeligallery6.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+        <img class="img-fluid" src="img/bubbeligallery6.jpeg" alt="Card image cap">
+      </a>
     </div>
     <!-- Grid column -->
 
@@ -255,6 +270,13 @@
     <script src="jquery.min.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
     <script src="myscripts.js"></script>
+    <script src="ekko-lightbox.js"></script>
+    <script>
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+    </script>
 
   </body>
 

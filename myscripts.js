@@ -32,3 +32,8 @@ function centerModal() {
     // Center modal vertically in window
     $dialog.css("margin-top", offset);
 }
+
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
