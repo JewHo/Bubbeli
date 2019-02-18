@@ -3,6 +3,17 @@
 <html lang="en">
 
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134702800-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-134702800-2');
+    </script>
+
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,17 +26,25 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.css" rel="stylesheet">
     <link href="ekko-lightbox.css" rel="stylesheet">
+    <link href="bootstrap-lightbox.css" rel="stylesheet">
 
   </head>
 
 
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <div id="scrolla" class="container footer rounded-top navbar-light text-dark">
+        <a href="#About" class="text-dark"><font size="4">ABOUT</font></a>
+        <a href="#Live" class="text-dark"><font size="4">LIVE</font></a>
+        <a href="#Contact" class="text-dark"><font size="4">CONTACT</font></a>
+        <a href="#Gallery" class="text-dark"><font size="4">GALLERY</font></a>
+    </div>
 
     <!-- Page Content -->
     <div class="container">
 
-      <div id="carouselExampleSlidesOnly" class="carousel slide mt-5 mb-3 shadow-lg" data-ride="carousel">
+      <div id="carouselExampleSlidesOnly" class="carousel slide mb-3 shadow-lg" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-caption">
               <h1 class="mt-3 text-center">Bubbeli</h1>
@@ -55,14 +74,15 @@
         </div>
       </div>
 
-      <div class="text-center mb-3">
-
-      <img src="img/prgssmalbw.jpg" class="center rounded mb-3 shadow" alt="Mååhe" width="160">
-
+      <!-- Pargas Pargas Pargas -->
+      <div class="text-center mb-1">
+        <img src="img/prgssmalbw.jpg" class="center rounded mb-3 shadow" alt="Mååhe" width="160">
       </div>
 
+      <iframe src="https://open.spotify.com/embed/artist/2hUKFORuqeQo6iUSlTmOVq" class="mb-3 shadow-lg" width="300" height="297" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-      <div class="card mb-4 shadow-lg">
+
+      <div class="card mb-4 shadow-lg" id="About">
         <div class="row no-gutters">
           <div class="col-md-8">
             <div class="card-body">
@@ -91,32 +111,44 @@
         </div>
       </div>
 
-      <div class="card mb-4 shadow-lg">
+      <div class="card mb-4 shadow-lg" id="Live">
         <div class="card-body">
           <h5 class="card-title"><font size="7" class="understreck">LIVE</font></h5>
+          <h5 class="card-title"><font size="5">Upcoming:</font></h5>
           <h5 class="card-title" style="font-family:monospace;">2019</h5>
-          <p class="card-text" style="font-family:monospace;">
-            8/2 Skärgårdsbaren, Åbo<br/>
+          <p class="card-text" style="font-family:monospace; font-weight:bold;">
+            21/3 Musik i Mars, Houtskär<br/>
             29/3 Doo-Bop Club, Vasa<br/>
+            6/4 Åbolands Nation Årsfest, Åbo<br/>
+            23/5 Bar Ö, Åbo<br/>
             24/5 Föreningen Luckan Rf, Helsingfors<br/>
             1/6 Najaden, Nagu<br/>
                 </p>
 
+
+          <h5 class="card-title"><font size="5">Past:</font></h5>
+          <h5 class="card-title" style="font-family:monospace;">2019</h5>
+          <p class="card-text" style="font-family:monospace;">
+            9/2 Bygga & Bo, Mässcenter, Åbo<br/>
+            8/2 Skärgårdsbaren, Åbo<br/>
+
+          </p>
+
           <h5 class="card-title" style="font-family:monospace;">2018</h5>
           <p class="card-text" style="font-family:monospace;">
-            14/7 Nagu Rock, Nagu<br/>
-            31/10 Råcktoberfest, Åbo<br/>
-            23/11 Faustivalen, Åbo<br/>
-            6/12 Pargas stads självständighetsfest, Pargas<br/>
             21/12 Axxell Pargas Julfest, Pargas<br/>
+            6/12 Pargas stads självständighetsfest, Pargas<br/>
+            23/11 Faustivalen, Åbo<br/>
+            31/10 Råcktoberfest, Åbo<br/>
+            14/7 Nagu Rock, Nagu<br/>
+          </p>
 
-
-            <p class="card-text" style="font-family:monospace;"><small class="text-muted">Last update: 16/2/2019</small></p>
+            <p class="card-text" style="font-family:monospace;"><small class="text-muted">Last update: 18/2/2019</small></p>
 
           </div>
         </div>
 
-      <div class="card-group mb-4 shadow-lg">
+      <div class="card-group mb-4 shadow-lg" id="Contact">
 
         <div class="card shadow-lg">
           <div class="card-body">
@@ -125,7 +157,7 @@
               Information and booking:<br/> <a href="mailto:bubbeli.rbo@gmail.com?Subject=Mååhe"><i>bubbeli.rbo@gmail.com</i></a><br/>
               <a href="tel:+358400258677">+358400258677</a><br/>
               <br/>
-              <a href="">Technical rider</a><br/>
+              <a href="img/Technical rider.pdf" target="_blank">Technical rider</a><br/>
               <br/>
               Links:<br/>
               <a href="https://open.spotify.com/artist/2hUKFORuqeQo6iUSlTmOVq?si=eJZGbAAnTQKbh8dJJsguQw" target="_blank">SPOTIFY</a><br/>
@@ -142,25 +174,25 @@
         </div>
         <div class="card shadow-lg">
           <div class="card-body">
-            <h2 class="card-title">Contact using this form:</h2>
+            <h2 class="card-title">Contact form:</h2>
 
             <form name="contact" method="POST" data-netlify="true">
 
               <div class="form-row pr-2 pl-2 pt-2">
                 <div class="col">
-                  <input type="text" style="font-family:monospace;" class="form-control" name="name" placeholder="Name">
+                  <input type="text" style="font-family:monospace;" class="form-control" name="name" placeholder="Your Name">
                 </div>
               </div>
 
               <div class="form-row pr-2 pl-2 pt-2">
                 <div class="col">
-                  <input type="email" style="font-family:monospace;" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" style="font-family:monospace;" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
                 </div>
               </div>
 
               <div class="form-row pr-2 pl-2 pt-2 pb-2">
                 <div class="col">
-                  <textarea class="form-control" style="font-family:monospace;" id="comments" name="comments" placeholder="Comment" rows="10"></textarea>
+                  <textarea class="form-control" style="font-family:monospace;" id="comments" name="comments" placeholder="Comments" rows="10"></textarea>
                 </div>
               </div>
 
@@ -174,74 +206,50 @@
       </div>
 
 
-    <h2><span class="badge badge-secondary">Gallery</span></h2>
+    <h2><span class="badge badge-secondary" id="Gallery">Gallery</span></h2>
 
 
   <!-- Grid row -->
-  <div class="gallery mb-5" id="gallery">
+  <!--<div class="gallery mb-5" id="gallery">-->
+
+
+  <div class="rowpic mb-5">
 
     <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery1.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+    <div class="columnpic">
+      <a href="img/bubbeligallery1.jpeg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/bubbeligallery1.jpeg" alt="Card image cap">
       </a>
-    </div>
-    <!-- Grid column -->
-
-    <div class="mb-3 pics animation all 1">
-      <a href="img/pargassebbe.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+      <a href="img/pargassebbe.jpg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/pargassebbe.jpg" alt="Card image cap">
       </a>
-    </div>
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery2.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+      </div>
+      <div class="columnpic">
+      <a href="img/bubbeligallery2.jpeg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/bubbeligallery2.jpeg" alt="Card image cap">
       </a>
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery3.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+      <a href="img/bubbeligallery3.jpeg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/bubbeligallery3.jpeg" alt="Card image cap">
       </a>
-    </div>
-    <!-- Grid column -->
-
-
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery4.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+      </div>
+      <div class="columnpic">
+      <a href="img/bubbeligallery4.jpeg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/bubbeligallery4.jpeg" alt="Card image cap">
       </a>
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery5.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
+      <a href="img/bubbeligallery5.jpeg" data-toggle="lightbox" data-gallery="gallery">
         <img class="img-fluid" src="img/bubbeligallery5.jpeg" alt="Card image cap">
       </a>
+      <a href="img/bubbeligallery6.jpeg" data-toggle="lightbox" data-gallery="gallery">
+        <img class="img-fluid" src="img/bubbeligallery6.jpeg" alt="Card image cap">
+      </a>
+      </div>
     </div>
     <!-- Grid column -->
 
-    <!-- Grid column -->
-    <div class="mb-3 pics animation all 1">
-      <a href="img/bubbeligallery6.jpeg" data-toggle="lightbox" data-gallery="example-gallery">
-        <img class="img-fluid" src="img/bubbeligallery6.jpeg" alt="Card image cap">
-      </a>
-    </div>
-    <!-- Grid column -->
+
 
   </div>
 
-
-  <!-- Grid row -->
-
-    </div>
 
 
     <footer>
