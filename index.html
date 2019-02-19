@@ -3,6 +3,7 @@
 <html lang="en">
 
   <head>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134702800-2"></script>
     <script>
@@ -21,12 +22,12 @@
     <meta name="author" content="">
 
     <title>Bubbeli & The Runeberg Orchestra</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/vaakuna.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.css" rel="stylesheet">
-    <link href="ekko-lightbox.css" rel="stylesheet">
-    <link href="bootstrap-lightbox.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <link href="css/baguetteBox.min.css" rel="stylesheet">
 
   </head>
 
@@ -35,10 +36,10 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <div id="scrolla" class="container footer rounded-top navbar-light text-dark">
-        <a href="#About" class="text-dark"><font size="4">ABOUT</font></a>
-        <a href="#Live" class="text-dark"><font size="4">LIVE</font></a>
-        <a href="#Contact" class="text-dark"><font size="4">CONTACT</font></a>
-        <a href="#Gallery" class="text-dark"><font size="4">GALLERY</font></a>
+        <a href="#About" class="text-dark"><font size="5">ABOUT</font></a>
+        <a href="#Live" class="text-dark"><font size="5">LIVE</font></a>
+        <a href="#Contact" class="text-dark"><font size="5">CONTACT</font></a>
+        <a href="#Gallery" class="text-dark"><font size="5">GALLERY</font></a>
     </div>
 
     <!-- Page Content -->
@@ -82,7 +83,13 @@
       <iframe src="https://open.spotify.com/embed/artist/2hUKFORuqeQo6iUSlTmOVq" class="mb-3 shadow-lg" width="300" height="297" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
-      <div class="card mb-4 shadow-lg" id="About">
+      <!-- Divider scroll down -->
+      <ul class="nav nav-list" id="About">
+        <li class="divider mb-3"></li>
+      </ul>
+
+
+      <div class="card mb-4 shadow-lg">
         <div class="row no-gutters">
           <div class="col-md-8">
             <div class="card-body">
@@ -111,36 +118,44 @@
         </div>
       </div>
 
-      <div class="card mb-4 shadow-lg" id="Live">
+      <!-- Divider scroll down -->
+      <ul class="nav nav-list" id="Live">
+        <li class="divider mb-3"></li>
+      </ul>
+
+      <div class="card mb-4 shadow-lg">
         <div class="card-body">
           <h5 class="card-title"><font size="7" class="understreck">LIVE</font></h5>
           <h5 class="card-title"><font size="5">Upcoming:</font></h5>
           <h5 class="card-title" style="font-family:monospace;">2019</h5>
           <p class="card-text" style="font-family:monospace; font-weight:bold;">
-            21/3 Musik i Mars, Houtskär<br/>
-            29/3 Doo-Bop Club, Vasa<br/>
-            6/4 Åbolands Nation Årsfest, Åbo<br/>
-            23/5 Bar Ö, Åbo<br/>
+            21/3 UF Lokalen, Houtskär<br/>
+            29/3 Doo-Bop Club, Vaasa<br/>
+            6/4 Private, Turku<br/>
+            18/5 Pub Bastun, Mariehamn<br/>
+            23/5 Bar Ö, Turku<br/>
             24/5 Föreningen Luckan Rf, Helsingfors<br/>
             1/6 Najaden, Nagu<br/>
+            29/6 Farmors Cafe, Dalsbruk<br/>
+            4/7 Trappmusik, Närpes<br/>
                 </p>
 
 
           <h5 class="card-title"><font size="5">Past:</font></h5>
           <h5 class="card-title" style="font-family:monospace;">2019</h5>
           <p class="card-text" style="font-family:monospace;">
-            9/2 Bygga & Bo, Mässcenter, Åbo<br/>
-            8/2 Skärgårdsbaren, Åbo<br/>
+            9/2 Private, Turku<br/>
+            8/2 Saaristobaari, Turku<br/>
 
           </p>
 
           <h5 class="card-title" style="font-family:monospace;">2018</h5>
           <p class="card-text" style="font-family:monospace;">
-            21/12 Axxell Pargas Julfest, Pargas<br/>
-            6/12 Pargas stads självständighetsfest, Pargas<br/>
-            23/11 Faustivalen, Åbo<br/>
-            31/10 Råcktoberfest, Åbo<br/>
-            14/7 Nagu Rock, Nagu<br/>
+            21/12 Private, Parainen<br/>
+            6/12 Private, Parainen<br/>
+            23/11 Faust, Turku<br/>
+            31/10 Saaristobaari, Turku<br/>
+            14/7 Nagu Rock, Nauvo<br/>
           </p>
 
             <p class="card-text" style="font-family:monospace;"><small class="text-muted">Last update: 18/2/2019</small></p>
@@ -148,7 +163,12 @@
           </div>
         </div>
 
-      <div class="card-group mb-4 shadow-lg" id="Contact">
+      <!-- Divider scroll down -->
+      <ul class="nav nav-list" id="Contact">
+        <li class="divider mb-3"></li>
+      </ul>
+
+      <div class="card-group mb-4 shadow-lg">
 
         <div class="card shadow-lg">
           <div class="card-body">
@@ -157,7 +177,12 @@
               Information and booking:<br/> <a href="mailto:bubbeli.rbo@gmail.com?Subject=Mååhe"><i>bubbeli.rbo@gmail.com</i></a><br/>
               <a href="tel:+358400258677">+358400258677</a><br/>
               <br/>
-              <a href="img/Technical rider.pdf" target="_blank">Technical rider</a><br/>
+              <!--<a href="img/Technical rider.pdf" target="_blank">Technical rider</a><br/>-->
+              <a href="img/Technical rider.pdf" role="button" class="btn btn-light"><font size="2">Technical rider</font></a>
+              <br/>
+              <br/>
+              <a href="drive.google.com" role="button" class="btn btn-light"><font size="2">Press kit</font></a>
+              <br/>
               <br/>
               Links:<br/>
               <a href="https://open.spotify.com/artist/2hUKFORuqeQo6iUSlTmOVq?si=eJZGbAAnTQKbh8dJJsguQw" target="_blank">SPOTIFY</a><br/>
@@ -205,50 +230,97 @@
         </div>
       </div>
 
+    <!-- Divider scroll down -->
+    <ul class="nav nav-list" id="Gallery">
+      <li class="divider mb-3"></li>
+    </ul>
 
-    <h2><span class="badge badge-secondary" id="Gallery">Gallery</span></h2>
+    <h2><span class="badge badge-secondary">Gallery</span></h2>
 
+    <div class="container gallery-container">
 
-  <!-- Grid row -->
-  <!--<div class="gallery mb-5" id="gallery">-->
+        <div class="tz-gallery">
 
+            <div class="row">
 
-  <div class="rowpic mb-5">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a class="lightbox" href="img/bubbeligallery1.jpeg">
+                            <img src="img/bubbeligallery1.jpeg" class="img-thumbnail" alt="Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/bubbeligallery2.jpeg">
+                          <img src="img/bubbeligallery2.jpeg" class="img-thumbnail" alt="Gallery">
+                      </a>
 
-    <!-- Grid column -->
-    <div class="columnpic">
-      <a href="img/bubbeligallery1.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery1.jpeg" alt="Card image cap">
-      </a>
-      <a href="img/pargassebbe.jpg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/pargassebbe.jpg" alt="Card image cap">
-      </a>
-      </div>
-      <div class="columnpic">
-      <a href="img/bubbeligallery2.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery2.jpeg" alt="Card image cap">
-      </a>
-      <a href="img/bubbeligallery3.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery3.jpeg" alt="Card image cap">
-      </a>
-      </div>
-      <div class="columnpic">
-      <a href="img/bubbeligallery4.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery4.jpeg" alt="Card image cap">
-      </a>
-      <a href="img/bubbeligallery5.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery5.jpeg" alt="Card image cap">
-      </a>
-      <a href="img/bubbeligallery6.jpeg" data-toggle="lightbox" data-gallery="gallery">
-        <img class="img-fluid" src="img/bubbeligallery6.jpeg" alt="Card image cap">
-      </a>
-      </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/bubbeligallery3.jpeg">
+                          <img src="img/bubbeligallery3.jpeg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/bubbeligallery4.jpeg">
+                          <img src="img/bubbeligallery4.jpeg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/bubbeligallery5.jpeg">
+                          <img src="img/bubbeligallery5.jpeg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/bubbeligallery6.jpeg">
+                          <img src="img/bubbeligallery6.jpeg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/pargassebbe.jpg">
+                          <img src="img/pargassebbe.jpg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/pargassebbebla.jpg">
+                          <img src="img/pargassebbebla.jpg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <a class="lightbox" href="img/pargassebbegron.jpg">
+                          <img src="img/pargassebbegron.jpg" class="img-thumbnail" alt="Gallery">
+                      </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    <!-- Grid column -->
 
-
-
-  </div>
+</div>
 
 
 
@@ -275,15 +347,13 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="jquery.min.js"></script>
-    <script src="bootstrap.bundle.min.js"></script>
-    <script src="myscripts.js"></script>
-    <script src="ekko-lightbox.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/myscripts.js"></script>
+    <script src="js/baguetteBox.min.js"> async</script>
+
     <script>
-      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
+      baguetteBox.run('.tz-gallery');
     </script>
 
   </body>
