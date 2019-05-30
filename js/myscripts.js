@@ -8,7 +8,7 @@
   items.each(function() {
     // Convert the string in 'data-event-date' attribute to a more
     // standardized date format
-    var BCDate = $(this).attr("gigDate").split("-");
+    var BCDate = $(this).attr("gigDate").split("/");
     var standardDate = $(this).attr("gigDate")
     this.setAttribute("year", BCDate[0]);
     this.setAttribute("month", BCDate[1]);
