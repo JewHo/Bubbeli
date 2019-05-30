@@ -4,7 +4,6 @@
   var past = $(".past");
   var items = $(".sort-item");
   var today = new Date();
-  today.setHours(0, 0, 0, 0);
 
   items.each(function() {
     // Convert the string in 'data-event-date' attribute to a more
