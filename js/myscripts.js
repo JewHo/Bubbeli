@@ -1,3 +1,68 @@
+
+  var container = $(".sort-list");
+  var upcoming = $(".upcoming");
+  var past = $(".past");
+  var items = $(".sort-item");
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  items.each(function() {
+    // Convert the string in 'data-event-date' attribute to a more
+    // standardized date format
+    var BCDate = $(this).attr("gigDate").split("-");
+    var standardDate = BCDate[1] + " " + BCDate[0] + " " + BCDate[2];
+    this.setAttribute("year", BCDate[2]);
+    this.setAttribute("month", BCDate[1]);
+    this.setAttribute("day", BCDate[0]);
+    standardDate = new Date(standardDate).getTime();
+    $(this).attr("gigDate", standardDate);
+
+  });
+
+  items.sort(function(a, b) {
+    a = parseFloat($(a).attr("gigDate"));
+    b = parseFloat($(b).attr("gigDate"));
+    return a > b ? -1 : a < b ? 1 : 0;
+  }).each(function() {
+
+    this.insertAdjacentText("afterbegin", this.getAttribute("day") + "/" + this.getAttribute("month") + " ");
+
+    if ($(this).attr("gigDate") >= today.getTime()) {
+      upcoming.prepend(this);
+    } else {
+      past.append(this);
+    }
+
+  });
+
+  var children = upcoming.children();
+  var headingYear = 0;
+  for (var i = 0; i < children.length; i++) {
+    if (i == 0) {
+      children[i].insertAdjacentHTML("beforebegin", "<h6 class='card-title' style='font-family:monospace;'>" + children[i].getAttribute("year") + "</h6>");
+      headingYear = children[i].getAttribute("year")
+    }
+    if (headingYear != children[i].getAttribute("year")) {
+      children[i].insertAdjacentHTML("beforebegin", "<br/><h6 class='card-title' style='font-family:monospace;'>" + children[i].getAttribute("year") + "</h6>");
+      headingYear = children[i].getAttribute("year")
+    }
+  }
+
+  var children = past.children();
+  var headingYear = 0;
+  for (var i = 0; i < children.length; i++) {
+    if (i == 0) {
+      children[i].insertAdjacentHTML("beforebegin", "<h6 class='card-title' style='font-family:monospace;'>" + children[i].getAttribute("year") + "</h6>");
+      headingYear = children[i].getAttribute("year")
+    }
+    if (headingYear != children[i].getAttribute("year")) {
+      children[i].insertAdjacentHTML("beforebegin", "<br/><h6 class='card-title' style='font-family:monospace;'>" + children[i].getAttribute("year") + "</h6>");
+      headingYear = children[i].getAttribute("year")
+    }
+  }
+
+
+
 $("#scrolla a[href^='#']").on('click', function(e) {
 
      // prevent default anchor click behavior
