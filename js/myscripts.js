@@ -26,7 +26,7 @@
 
     this.insertAdjacentText("afterbegin", this.getAttribute("day") + "/" + this.getAttribute("month") + " ");
 
-    if ($(this).attr("gigDate") >= today.getTime()) {
+    if (+($(this).attr("gigDate")) >= +(today.getTime())) {
       upcoming.prepend(this);
     } else {
       past.append(this);
