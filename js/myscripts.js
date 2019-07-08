@@ -1,3 +1,12 @@
+$('.collapse').on('shown.bs.collapse', function(e) {
+  var $card = $(this).closest('.card');
+  $('html,body').animate({
+    scrollTop: $card.offset().top
+  }, 500);
+});
+
+
+
 
   var container = $(".sort-list");
   var upcoming = $(".upcoming");
@@ -106,10 +115,6 @@ $( 'a a' ).remove();
 
 document.documentElement.setAttribute("lang", "en");
 document.documentElement.removeAttribute("class");
-
-axe.run( function(err, results) {
-  console.log( results.violations );
-} );
 
 function centerModal() {
     $(this).css('display', 'block');

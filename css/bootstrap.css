@@ -47,6 +47,10 @@
        local('Sebbefont');
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .gallery-container h1 {
     text-align: center;
     margin-top: 70px;
