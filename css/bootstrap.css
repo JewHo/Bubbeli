@@ -47,9 +47,21 @@
        local('Sebbefont');
 }
 
+.bubbeli {
+  background-color: #EEF0F2;
+  padding: 12px 7px 7px 7px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.skugga {
+  text-shadow: #343a40 0.1em 0.1em 0.2em;
+}
+
 body.modal-open {
     overflow: hidden;
 }
+
+
 
 .gallery-container h1 {
     text-align: center;
