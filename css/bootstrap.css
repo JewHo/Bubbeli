@@ -47,6 +47,20 @@
        local('Sebbefont');
 }
 
+.btn:focus, .btn:active, button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#image-gallery .modal-footer{
+  display: block;
+}
+
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .bubbeli {
   background-color: #EEF0F2;
   padding: 12px 2px 6px 2px;
@@ -813,7 +827,7 @@ mark,
 }
 
 .img-thumbnail {
-  border: 1px solid rgb(0,0,0);
+  border: 0px solid rgb(0,0,0);
   border-radius: 0.25rem;
   max-width: 100%;
   height: auto;
