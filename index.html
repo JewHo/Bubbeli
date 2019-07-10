@@ -27,6 +27,14 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/baguetteBox.min.css" rel="stylesheet">
+    <!-- Core CSS file -->
+    <link rel="stylesheet" href="css/photoswipe.css">
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+         In the folder of skin CSS file there are also:
+         - .png and .svg icons sprite,
+         - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="css/default-skin/default-skin.css">
 
   </head>
 
@@ -643,8 +651,8 @@
       <div class="card mb-4 shadow-lg">
         <div class="card-body">
           <h5 class="card-title"><font size="7" class="understreck">PHOTOS</font></h5>
-            <!-- Show list -->
-            <div class="container gallery-container">
+          <!-- Old -->
+          <!--<div class="container gallery-container">
                 <div class="tz-gallery">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
@@ -828,10 +836,107 @@
                     	</div>
                     </div>
                 </div>
-            </div>
-          </div>
-        </div>
+            </div>-->
+            <div class="my-gallery align-self-center" itemscope>
 
+              <figure itemprop="associatedMedia" itemscope>
+                  <a href="img/pargassebbe.jpg" itemprop="contentUrl" data-size="600x600">
+                      <img src="img/pargassebbe.jpg" itemprop="thumbnail" alt="Image description" />
+                  </a>
+                  <figcaption itemprop="caption description">Gul</figcaption>
+              </figure>
+
+              <figure itemprop="associatedMedia" itemscope>
+                  <a href="img/pargassebbebla.jpg" itemprop="contentUrl" data-size="600x600">
+                      <img src="img/pargassebbebla.jpg" itemprop="thumbnail" alt="Image description" />
+                  </a>
+                  <figcaption itemprop="caption description">Blå</figcaption>
+              </figure>
+
+              <figure itemprop="associatedMedia" itemscope>
+                  <a href="img/pargassebbegron.jpg" itemprop="contentUrl" data-size="600x600">
+                      <img src="img/pargassebbegron.jpg" itemprop="thumbnail" alt="Image description" />
+                  </a>
+                  <figcaption itemprop="caption description">Grön</figcaption>
+              </figure>
+
+              <figure itemprop="associatedMedia" itemscope>
+                  <a href="img/bubbeligallery1.jpeg" itemprop="contentUrl" data-size="auto">
+                      <img src="img/bubbeligallery1.jpeg" itemprop="thumbnail" alt="Image description" />
+                  </a>
+                  <figcaption itemprop="caption description">Grön</figcaption>
+              </figure>
+
+
+            </div>
+            <!-- Root element of PhotoSwipe. Must have class pswp. -->
+            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                <!-- Background of PhotoSwipe.
+                     It's a separate element as animating opacity is faster than rgba(). -->
+                <div class="pswp__bg"></div>
+
+                <!-- Slides wrapper with overflow:hidden. -->
+                <div class="pswp__scroll-wrap">
+
+                    <!-- Container that holds slides.
+                        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                        Don't modify these 3 pswp__item elements, data is added later on. -->
+                    <div class="pswp__container">
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                    </div>
+
+                    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                    <div class="pswp__ui pswp__ui--hidden">
+
+                        <div class="pswp__top-bar">
+
+                            <!--  Controls are self-explanatory. Order can be changed. -->
+
+                            <div class="pswp__counter"></div>
+
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                            <!-- element will get class pswp__preloader--active when preloader is running -->
+                            <div class="pswp__preloader">
+                                <div class="pswp__preloader__icn">
+                                  <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                        </div>
+
+                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                        </button>
+
+                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                        </button>
+
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+      </div>
     </div>
 
 
@@ -948,9 +1053,48 @@
     <script src="js/myscripts.js"></script>
     <script src="js/baguetteBox.min.js"> async</script>
 
+    <!-- Core JS file -->
+    <script src="js/photoswipe.min.js"></script>
+
+    <!-- UI JS file -->
+    <script src="js/photoswipe-ui-default.min.js"></script>
+
     <script>
       baguetteBox.run('.tz-gallery');
     </script>
+
+    <!-- Photoswipe test script -->
+    <!--<script>
+      var pswpElement = document.querySelectorAll('.pswp')[0];
+
+      // build items array
+      var items = [
+          {
+              src: 'img/bubbeligallery5.jpeg',
+              w: 600,
+              h: 400
+          },
+          {
+              src: 'img/bubbeligallery5.jpeg',
+              w: 1200,
+              h: 900
+          }
+      ];
+
+      // define options (if needed)
+      var options = {
+          // optionName: 'option value'
+          // for example:
+          index: 0 // start at first slide
+      };
+
+      // Initializes and opens PhotoSwipe
+      var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+      openPhotoSwipe();
+
+      document.getElementById('btn').onclick = openPhotoSwipe;
+    </script>-->
 
   </body>
 
