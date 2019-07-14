@@ -47,6 +47,44 @@
        local('Sebbefont');
 }
 
+.btn:focus, .btn:active, button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#image-gallery .modal-footer{
+  display: block;
+}
+
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bubbeli {
+  background-color: #EEF0F2;
+  padding: 12px 2px 6px 2px;
+  box-shadow: 0px 0px 50px 60px #EEF0F2 !important;
+  border-radius: 0.25rem !important;
+}
+
+.text-blur {
+  z-index: 700;
+  position: relative;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.skugga {
+  text-shadow: #343a40 0.1em 0.1em 0.2em;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
 .gallery-container h1 {
     text-align: center;
     margin-top: 70px;
@@ -789,7 +827,7 @@ mark,
 }
 
 .img-thumbnail {
-  border: 1px solid rgb(0,0,0);
+  border: 0px solid rgb(0,0,0);
   border-radius: 0.25rem;
   max-width: 100%;
   height: auto;
@@ -2764,6 +2802,11 @@ fieldset:disabled a.btn {
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+.btn-wrap-text {
+    white-space: normal !important;
+    word-wrap: break-word !important;
 }
 
 .btn-warning {
