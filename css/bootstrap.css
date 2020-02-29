@@ -68,6 +68,11 @@
   border-radius: 0.25rem !important;
 }
 
+.bubbeli1 {
+  background-color: #EEF0F2;
+  box-shadow: 0px 0px 5px 5px #EEF0F2 !important;
+}
+
 .text-blur {
   z-index: 700;
   position: relative;
@@ -7675,6 +7680,14 @@ button.bg-dark:focus {
 }
 
 .fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-bottom1 {
   position: fixed;
   right: 0;
   bottom: 0;

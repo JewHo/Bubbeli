@@ -1,3 +1,9 @@
+//Hide banner
+
+function myFunction() {
+    $(document.getElementById("myDIV")).fadeOut("fast");
+}
+
 // PhotoSwipe
 let modalId = $('#image-gallery');
 
