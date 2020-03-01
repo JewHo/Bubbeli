@@ -47,6 +47,18 @@
        local('Sebbefont');
 }
 
+#left {
+    float:left;
+}
+
+#center {
+    display: inline-block;
+}
+
+#right {
+    float:right;
+}
+
 .btn:focus, .btn:active, button:focus, button:active {
   outline: none !important;
   box-shadow: none !important;
@@ -62,15 +74,15 @@
 }
 
 .bubbeli {
-  background-color: #EEF0F2;
+  background-color: #EEEDED;
   padding: 12px 2px 6px 2px;
-  box-shadow: 0px 0px 50px 60px #EEF0F2 !important;
+  box-shadow: 0px 0px 30px 40px #EEEDED !important;
   border-radius: 0.25rem !important;
 }
 
 .bubbeli1 {
-  background-color: #EEF0F2;
-  box-shadow: 0px 0px 5px 5px #EEF0F2 !important;
+  background-color: #EEEDED;
+  box-shadow: 0px 0px 5px 5px #EEEDED !important;
 }
 
 .text-blur {
@@ -272,6 +284,14 @@ ul#menu li {
   text-align: center;
 }
 
+.footer1 {
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
 .ImageBorder
 {
     border-width: 1px;
@@ -430,6 +450,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+p0 {
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 abbr[title],

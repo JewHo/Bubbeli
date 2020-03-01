@@ -3,7 +3,7 @@
 
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134702800-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,7 @@
 
       gtag('config', 'UA-134702800-2');
     </script>
-
+    -->
 
 
     <meta charset="utf-8">
@@ -41,7 +41,7 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
       <!-- Navbar -->
-    <div id="scrolla" class="container footer rounded-top navbar-light text-dark bubbeli skugga">
+    <div id="scrolla" class="footer rounded-top navbar-light text-dark bubbeli skugga">
         <a href="#Music" class="text-dark"><font size="5">MUSIC</font></a>
         <a href="#About" class="text-dark"><font size="5">ABOUT</font></a>
         <a href="#Live" class="text-dark"><font size="5">LIVE</font></a>
@@ -808,7 +808,7 @@
     </div>
 
     <footer>
-      <div class="container footer rounded-top navbar-light bubbeli">
+      <div class="footer rounded-top navbar-light bubbeli">
         <a class="navbar-brand text-center skugga" href="https://open.spotify.com/artist/2hUKFORuqeQo6iUSlTmOVq?si=eJZGbAAnTQKbh8dJJsguQw" target="_blank">
           SPOTIFY
         </a>
@@ -912,12 +912,18 @@
       </div>
     </footer>
 
-      <div class="fixed-bottom bubbeli1" id="myDIV">
-        By using our site you consent to cookies -
-        <a href="" data-toggle="modal" data-target="#exampleModalLong">
-          Learn more
-        </a>
-        <button class="close pr-3" type="button" name="button" onclick="myFunction()">&times;</button>
+      <div class="footer1 bubbeli1 " style="position: fixed;" id="myDIV">
+        <div id="right" style="padding-right: 0.75rem">
+          <button class="close" type="button" name="button" onclick="myFunction()">&times;</button>
+        </div>
+        <div id="left" style="padding-left: 0.75rem">
+          <img src="img/favicon.ico" alt="" style="filter: grayscale(100%);" width="24" height="24">
+        </div>
+        <div id="center">
+          <p0 style="font-family:monospace;">
+            By visiting this site, you consent to the use of cookies - <a href="" data-toggle="modal" data-target="#exampleModalLong">Learn more</a>
+          </p0>
+        </div>
       </div>
 
 
