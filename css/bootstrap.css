@@ -2671,6 +2671,22 @@ textarea.form-control {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btn1 {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
@@ -3286,6 +3302,13 @@ fieldset:disabled a.btn {
   border-radius: 0.2rem;
 }
 
+.btn-sm1, .btn-group-sm > .btn {
+  padding: 0px 5px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
 .btn-block {
   display: block;
   width: 100%;
@@ -3621,6 +3644,11 @@ input[type="button"].btn-block {
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
+}
+
+.btn-sm1 + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+  padding-right: 0.25rem;
+  padding-left: 0.25 rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
@@ -5706,6 +5734,30 @@ input[type="button"].btn-block {
 }
 
 button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.close1 {
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.close1:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.close1:not(:disabled):not(.disabled):hover, .close1:not(:disabled):not(.disabled):focus {
+  color: #000;
+  text-decoration: none;
+  opacity: .75;
+}
+
+button.close1 {
   padding: 0;
   background-color: transparent;
   border: 0;
