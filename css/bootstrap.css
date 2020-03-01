@@ -5326,6 +5326,14 @@ input[type="button"].btn-block {
   color: inherit;
 }
 
+.alert-dismissible .close1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
 .alert-primary {
   color: #004085;
   background-color: #cce5ff;
@@ -5741,7 +5749,10 @@ button.close {
 }
 
 .close1 {
+  float: right;
+  font-size: 1.5rem;
   font-weight: 700;
+  line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
@@ -5872,6 +5883,11 @@ button.close1 {
 }
 
 .modal-header .close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-header .close1 {
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
 }
