@@ -421,15 +421,17 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: center;
-  background-color: rgb(219,130,132);
+  background-color: rgb(0,106,167);
   /*background-color: rgb(193,146,61);
+  background-color: rgb(219,130,132);
+  background-color: rgb(255,255,255);
   background-color: rgb(255,253,208);
   background-color: rgba(221,0,0,1);*/
-  background-image: url('../img/vapen.png');
-  background-size: 40px 42px;
+  background-image:  url('../img/vapenfinswe.png');
+  background-size: 80px 84px;
   /*background-image: linear-gradient(to bottom, rgba(220,220,220,0.6) 0%,rgba(220,220,220,0.6) 100%), url('img/vaakuna.png');
-  */
-  background-repeat: space repeat;
+  background-repeat: repeat, repeat;  */
+  background-repeat: repeat;
 }
 
 [tabindex="-1"]:focus {
