@@ -201,7 +201,7 @@ vertical-align: middle;
 }
 
 .filler {
-  height: 80vh;
+  height: 90vh;
 }
 
 .thumb{
@@ -574,14 +574,21 @@ body {
   background-color: rgb(145,172,219);
   background-color: rgb(236,94,42);
   background-color: rgb(236,94,42,0.8) ;
-  background: url('../img/sol.svg') no-repeat 10% 30%,
+  background: url('../img/bubbelitext.png') no-repeat 50% 40%,
+  url('../img/sol.svg') no-repeat 10% 30%,
   url('../img/Pussikalja_man.png') no-repeat 20% 100%,
   url('../img/Pussikalja_fågel.png') no-repeat 85% 26.67%,
-  url('../img/kaktus1.png') no-repeat 50% 90%,
-  url('../img/berg1.png') no-repeat 60% 64%,
+  url('../img/kaktus1.png') no-repeat 40% 90%,
+  url('../img/kaktus2.png') no-repeat 75% 85%,
+  url('../img/kaktus3.png') no-repeat 60% 80%,
+  url('../img/kaktus4.png') no-repeat 95% 70%,
+  url('../img/kaktus5.png') no-repeat 20% 75%,
+  url('../img/berg1.png') no-repeat 90% 66%,
+  url('../img/berg2.png') no-repeat 45% 66%,
+  url('../img/berg3.png') no-repeat 15% 66%,
   linear-gradient(rgb(236,94,42,0.8) 66.67%, rgb(239,140,52,0.8) 33.33%);
   background-attachment: fixed;
-  background-size: 10%, 8%, 8%, 8%, 8%, auto;
+  background-size: 30%, 10%, 8%, 8%, 8%, 7%, 6%, 5%, 5%, 8%, 8%, 4%, auto;
   /*background-color: rgb(193,146,61);
   background-color: rgb(255,253,208);
   background-color: rgba(221,0,0,1);
