@@ -583,8 +583,11 @@ body:before {
   url('../img/berg1.png') no-repeat 90% 66%,
   url('../img/berg2.png') no-repeat 45% 66%,
   url('../img/berg3.png') no-repeat 15% 66%,
-  linear-gradient(rgb(236,94,42,0.8) 66.67%, rgb(239,140,52,0.8) 33.33%);
+  linear-gradient(rgb(236,94,42) 66.67%, rgb(239,140,52) 33.33%);
   background-size: 30%, 10%, 8%, 8%, 8%, 7%, 6%, 5%, 5%, 8%, 8%, 4%, auto;
+}
+.footerbg {
+  background-color: rgb(239,140,52,0.9);
 }
 
 body {
