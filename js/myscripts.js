@@ -1,3 +1,9 @@
+//Hide banner
+
+function myFunction() {
+    $(document.getElementById("myDIV")).fadeOut("fast");
+}
+
 // PhotoSwipe
 let modalId = $('#image-gallery');
 
@@ -330,6 +336,20 @@ $('.collapse').on('shown.bs.collapse', function(e) {
   var $card = $(this).closest('.card');
   $('html,body').animate({
     scrollTop: $card.offset().top
+  }, 500);
+});
+
+$('.collapse').on('shown.bs.collapse', function(e) {
+  var $card = $(this).closest('.accordion-item');
+  var $open = $($(this).data('parent')).find('.collapse.show');
+
+  var additionalOffset = 0;
+  if($card.prevAll().filter($open.closest('.accordion-item')).length !== 0)
+  {
+		additionalOffset =  $open.height();
+  }
+  $('html,body').animate({
+    scrollTop: $card.offset().top - additionalOffset
   }, 500);
 });
 

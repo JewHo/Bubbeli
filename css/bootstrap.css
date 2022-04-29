@@ -33,6 +33,7 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: Sebbefont, Juhofont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: Sebbefont, Juhofont, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: rgb(236,94,42);
 }
 
 /*@font-face {
@@ -47,6 +48,149 @@
        local('Sebbefont');
 }
 
+#left {
+    float:left;
+    height: 100%;
+}
+
+#center {
+    display: inline-block;
+}
+
+#right {
+    float:right;
+    height: 100%;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6%;
+  height: 6%;
+}
+
+.toppercent {
+  padding-top: 100%;
+  margin: auto;
+}
+
+.clippath {
+  clip-path: inset(0);
+}
+
+.fixedpos {
+  position: fixed;
+}
+
+.centerimage {
+  object-fit: cover;
+  position: fixed;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.main {
+  text-align: center;
+  z-index: 2;
+}
+
+#aside{
+   display: inline-block;
+   vertical-align: middle;
+}
+
+img.center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+.vcenter {
+vertical-align: middle;
+}
+
+.aside-1 {
+  height: 100%;
+  width: auto;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.aside-2 {
+  height: 100%;
+  width: auto;
+  position: fixed;
+  float: right;
+  z-index: 1;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+}
+
+.navlineheight {
+  line-height: 1.5;
+}
+
+.navpadding {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.bigassfont {
+    font-size: 4.8rem;
+    color: rgb(242,219,89);
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.navfontsize {
+  font-size: 1.5rem !important;
+  padding-bottom: 3px;
+}
+
+.textborder {
+    /* 1 pixel black shadow to left, top, right and bottom */
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+}
+
+.boxshad {
+  background-color: rgb(219,130,132);
+  box-shadow: 0px 0px 5px 5px rgb(219,130,132) !important;
+}
+
+.newnavbarpad {
+  padding: 4px 2px 0px 2px;
+  border-radius: 0.25rem !important;
+}
+
+.toppad {
+  padding-top: 43px;
+}
+
 .btn:focus, .btn:active, button:focus, button:active {
   outline: none !important;
   box-shadow: none !important;
@@ -56,16 +200,27 @@
   display: block;
 }
 
+.filler {
+  height: 90vh;
+}
+
 .thumb{
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 .bubbeli {
-  background-color: #EEF0F2;
   padding: 12px 2px 6px 2px;
-  box-shadow: 0px 0px 50px 60px #EEF0F2 !important;
   border-radius: 0.25rem !important;
+}
+
+.navinobg {
+overflow: auto;
+}
+
+.bubbeli1 {
+  background-color: rgb(239,140,52,0.9);
+  box-shadow: 0px 0px 1px 1px rgb(239,140,52,0.9) !important;
 }
 
 .text-blur {
@@ -77,6 +232,10 @@
 
 .skugga {
   text-shadow: #343a40 0.1em 0.1em 0.2em;
+}
+
+.skugga1 {
+  text-shadow: rgb(239,140,52) 0.1em 0.1em 0.2em;
 }
 
 body.modal-open {
@@ -267,6 +426,15 @@ ul#menu li {
   text-align: center;
 }
 
+.footer1 {
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  z-index: 3;
+}
+
 .ImageBorder
 {
     border-width: 1px;
@@ -378,6 +546,8 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: url('../img/vapen_color_hover.png') 25 15, auto;
+
 }
 
 @-ms-viewport {
@@ -388,6 +558,38 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+nav {
+  overflow: auto;
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url('../img/lilabub.png') no-repeat 50% 40%,
+  url('../img/sol.svg') no-repeat 10% 30%,
+  url('../img/Pussikalja_man.png') no-repeat 20% 100%,
+  url('../img/Pussikalja_fågel.png') no-repeat 85% 26.67%,
+  url('../img/kaktus1.png') no-repeat 40% 90%,
+  url('../img/kaktus2.png') no-repeat 75% 85%,
+  url('../img/kaktus3.png') no-repeat 60% 80%,
+  url('../img/kaktus4.png') no-repeat 95% 70%,
+  url('../img/kaktus5.png') no-repeat 20% 75%,
+  url('../img/berg1.png') no-repeat 90% 66%,
+  url('../img/berg2.png') no-repeat 45% 66%,
+  url('../img/berg3.png') no-repeat 15% 66%,
+  linear-gradient(rgb(236,94,42) 66.67%, rgb(239,140,52) 33.33%);
+  background-size: 30%, 10%, 8%, 8%, 8%, 7%, 6%, 5%, 5%, 8%, 8%, 4%, auto;
+}
+.footerbg {
+  background-color: rgb(239,140,52,0.9);
+}
+
 body {
   margin: 0;
   font-family: Sebbefont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -396,16 +598,61 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: center;
-  background-color: rgb(219,130,132);
+  /*background-color: rgb(118,152,211);
+  background-color: rgb(145,172,219);
+  background-color: rgb(236,94,42);
+  background-color: rgb(236,94,42,0.8) ;
+  background: url('../img/bubbelitext.png') no-repeat 50% 40%,
+  url('../img/sol.svg') no-repeat 10% 30%,
+  url('../img/Pussikalja_man.png') no-repeat 20% 100%,
+  url('../img/Pussikalja_fågel.png') no-repeat 85% 26.67%,
+  url('../img/kaktus1.png') no-repeat 40% 90%,
+  url('../img/kaktus2.png') no-repeat 75% 85%,
+  url('../img/kaktus3.png') no-repeat 60% 80%,
+  url('../img/kaktus4.png') no-repeat 95% 70%,
+  url('../img/kaktus5.png') no-repeat 20% 75%,
+  url('../img/berg1.png') no-repeat 90% 66%,
+  url('../img/berg2.png') no-repeat 45% 66%,
+  url('../img/berg3.png') no-repeat 15% 66%,
+  linear-gradient(rgb(236,94,42,0.8) 66.67%, rgb(239,140,52,0.8) 33.33%);
+  background-attachment: fixed;
+  background-size: 30%, 10%, 8%, 8%, 8%, 7%, 6%, 5%, 5%, 8%, 8%, 4%, auto;*/
+
   /*background-color: rgb(193,146,61);
   background-color: rgb(255,253,208);
-  background-color: rgba(221,0,0,1);*/
+  background-color: rgba(221,0,0,1);
   background-image: url('../img/vapen.png');
+  background-attachment: fixed;
   background-size: 40px 42px;
   /*background-image: linear-gradient(to bottom, rgba(220,220,220,0.6) 0%,rgba(220,220,220,0.6) 100%), url('img/vaakuna.png');
-  */
-  background-repeat: space repeat;
+  background-repeat: space repeat;*/
 }
+
+.backgroundimage {
+  background-image: url('../img/albumcover.jpg');
+  /*background-image: linear-gradient(to bottom, rgba(220,220,220,0.6) 0%,rgba(220,220,220,0.6) 100%), url('img/vaakuna.png');
+  */
+  background-position:center center;
+  background-attachment: fixed;
+  background-size: auto 100%;
+}
+
+.sidebackgroundimageleft {
+  background-image: url('../img/vapen_crop.png');
+  background-attachment: fixed;
+  background-position: left;
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.sidebackgroundimageright {
+  background-image: url('../img/vapen_crop.png');
+  background-attachment: fixed;
+  background-position: right;
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -425,6 +672,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+p0 {
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 abbr[title],
@@ -508,6 +761,7 @@ a {
 a:hover {
   color: #0056b3;
   text-decoration: underline;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 a:not([href]):not([tabindex]) {
@@ -686,7 +940,7 @@ output {
 
 summary {
   display: list-item;
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 template {
@@ -890,10 +1144,15 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 6px;
+  padding-left: 6px;
   margin-right: auto;
   margin-left: auto;
+}
+.sidecontainer {
+  height: 100%;
+  padding-right: 14px;
+  padding-left: 14px;
 }
 
 @media (min-width: 576px) {
@@ -2623,7 +2882,6 @@ textarea.form-control {
 }
 
 .btn {
-  display: inline-block;
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
@@ -2635,6 +2893,22 @@ textarea.form-control {
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn1 {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2660,7 +2934,7 @@ textarea.form-control {
 }
 
 .btn:not(:disabled):not(.disabled) {
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 a.btn.disabled,
@@ -3255,6 +3529,13 @@ fieldset:disabled a.btn {
   border-radius: 0.2rem;
 }
 
+.btn-sm1, .btn-group-sm > .btn {
+  padding: 0px 5px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
 .btn-block {
   display: block;
   width: 100%;
@@ -3590,6 +3871,11 @@ input[type="button"].btn-block {
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
+}
+
+.btn-sm1 + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+  padding-right: 0.25rem;
+  padding-left: 0.25 rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
@@ -4113,7 +4399,7 @@ input[type="button"].btn-block {
   width: 100%;
   height: 0.5rem;
   color: transparent;
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
   background-color: #dee2e6;
   border-color: transparent;
   border-radius: 1rem;
@@ -4144,7 +4430,7 @@ input[type="button"].btn-block {
   width: 100%;
   height: 0.5rem;
   color: transparent;
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
   background-color: #dee2e6;
   border-color: transparent;
   border-radius: 1rem;
@@ -4177,7 +4463,7 @@ input[type="button"].btn-block {
   width: 100%;
   height: 0.5rem;
   color: transparent;
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
   background-color: transparent;
   border-color: transparent;
   border-width: 0.5rem;
@@ -4388,7 +4674,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-toggler:not(:disabled):not(.disabled) {
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 .navbar-toggler-icon {
@@ -4707,6 +4993,10 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+
+.graycard {
+  background-color: gray;
 }
 
 .card {
@@ -5044,7 +5334,7 @@ input[type="button"].btn-block {
 }
 
 .page-link:not(:disabled):not(.disabled) {
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 .page-item:first-child .page-link {
@@ -5260,6 +5550,14 @@ input[type="button"].btn-block {
 }
 
 .alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.alert-dismissible .close1 {
   position: absolute;
   top: 0;
   right: 0;
@@ -5665,7 +5963,7 @@ input[type="button"].btn-block {
 }
 
 .close:not(:disabled):not(.disabled) {
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
@@ -5675,6 +5973,34 @@ input[type="button"].btn-block {
 }
 
 button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.close1 {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
+}
+
+.close1:not(:disabled):not(.disabled) {
+  cursor: url('../img/vapen_color.png') 25 15, auto;
+}
+
+.close1:not(:disabled):not(.disabled):hover, .close1:not(:disabled):not(.disabled):focus {
+  color: #000;
+  text-decoration: none;
+  opacity: .75;
+}
+
+button.close1 {
   padding: 0;
   background-color: transparent;
   border: 0;
@@ -5789,6 +6115,11 @@ button.close {
 }
 
 .modal-header .close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-header .close1 {
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
 }
@@ -6351,7 +6682,7 @@ button.close {
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
-  cursor: pointer;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -6827,6 +7158,10 @@ button.bg-dark:focus {
 .embed-responsive::before {
   display: block;
   content: "";
+}
+
+iframe {
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 .embed-responsive .embed-responsive-item,
@@ -7675,6 +8010,14 @@ button.bg-dark:focus {
 }
 
 .fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-bottom1 {
   position: fixed;
   right: 0;
   bottom: 0;
