@@ -1,0 +1,1 @@
+const data = '{"href": "https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on&locale=en-GB,en-US;q=0.9,en;q=0.8,fi;q=0.7"}'

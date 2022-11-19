@@ -1,3 +1,18 @@
+
+
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  //
+};
+
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  let element = document.getElementById('embed-iframe');
+  let options = {
+      uri: 'spotify:artist:2hUKFORuqeQo6iUSlTmOVq'
+    };
+  let callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+};
+
 //Hide banner
 
 function myFunction() {
