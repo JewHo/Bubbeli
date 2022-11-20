@@ -102,16 +102,18 @@
               <h5 class="card-title"><font size="7" class="">MUSIC</font></h5>
 
               <div id="bubbelispotify"></div>
+
               <script>
-                  var accessToken = "BQBf2qkiUlB3kPj_RrLevWymZ1oDA_n7zVyIdwAMiPDhPx9HlqZcXcfesvMILuzRVmNohlTyREVMGT8W_KBhqFptR9ast4yrDf9ePomPfUT4quXc1HKXr0vbvGymVE2mZFerDAu-QyO2R_6QUdJqv1dr590exvrRdBTjSnFal6qYgMU";
+                var token = "BQBf2qkiUlB3kPj_RrLevWymZ1oDA_n7zVyIdwAMiPDhPx9HlqZcXcfesvMILuzRVmNohlTyREVMGT8W_KBhqFptR9ast4yrDf9ePomPfUT4quXc1HKXr0vbvGymVE2mZFerDAu-QyO2R_6QUdJqv1dr590exvrRdBTjSnFal6qYgMU";
                   async function getArtistData() {
                   const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
                             method: 'GET',
                             headers: {
                                 'Accept': 'application/json',
                                 'Content-Type': 'application/json',
-                                'Authorization': 'Bearer ' + accessToken
+                                'Authorization': 'Bearer ' + token
                             }
+
                         })
                         .then(response => response.json());
                   console.log(artistResponse);
@@ -170,14 +172,14 @@
                         var divTracks = document.createElement("div");
                         divTracks.id = "accordion";
                         divTracks.style = "font-family:monospace;";
-                        var accessTokenAlbumTrack = "BQABtm-KXVa0z0ra7Dv3bei_zF2TrchpFlIEYfMrOjlRhElqFWtzPcEz5Q8m8kDeqOhi9FFtD_srs6yoCj8ghiC2cfc3_W7BFzvJg1fsxMeYTWTVEhYyCJc0hAukj8GgOx2MM4uGW-vyQPlzP4w-j__OpvM8t0W5PMg9lSXDK15MpOU"
+                        //var accessTokenAlbumTrack = "BQABtm-KXVa0z0ra7Dv3bei_zF2TrchpFlIEYfMrOjlRhElqFWtzPcEz5Q8m8kDeqOhi9FFtD_srs6yoCj8ghiC2cfc3_W7BFzvJg1fsxMeYTWTVEhYyCJc0hAukj8GgOx2MM4uGW-vyQPlzP4w-j__OpvM8t0W5PMg9lSXDK15MpOU"
                         var albumUrl = 'https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks'
                         const albumDataRequest = await fetch('https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks', {
                                           method: 'GET',
                                           headers: {
                                               'Accept': 'application/json',
                                               'Content-Type': 'application/json',
-                                              'Authorization': 'Bearer ' + accessTokenAlbumTrack
+                                              'Authorization': 'Bearer ' + token
                                           }
                                       })
                           .then((response) => response.json())
