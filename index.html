@@ -143,14 +143,14 @@
                         div7.className= "col-md-7 pl-0 pr-0 align-self-center";
                         var heading1 = document.createElement("h5");
                         heading1.className= "mb-0";
-                        var heading2 = document.createElement("h2");
+                        var heading2 = document.createElement("h3");
                         heading2.innerHTML = albumItems[i].name;
                         heading2.style = "font-family:monospace"
                         var heading3 = document.createElement("h5");
                         heading3.innerHTML = albumItems[i].album_type;
-                        var heading4 = document.createElement("h6");
-                        heading4.style = "font-family:monospace";
-                        heading4.innerHTML = albumItems[i].release_date;
+                        //var heading4 = document.createElement("h6");
+                        //heading4.style = "font-family:monospace";
+                        //heading4.innerHTML = albumItems[i].release_date;
                         var div8 = document.createElement("div");
                         div8.id = 'collapse'+albumItems[i].id;
                         div8.className= "collapse";
@@ -159,6 +159,9 @@
                         var heading5 = document.createElement("h2");
                         heading5.className = "card-title mt-3";
                         heading5.innerHTML = "Tracklist";
+                        var heading6 = document.createElement("h4");
+                        heading6.className = "card-title mt-3";
+                        heading6.innerHTML = "Info";
                         var img = document.createElement("img");
                         img.src = albumItems[i].images[1].url;
                         img.className = "img-responsive rounded";
@@ -188,20 +191,24 @@
                             const albumTracks = data.items;
                             console.log(albumTracks);
                             if (albumTracks.length > 1) {
-                              for (var i = 0; i < albumTracks.length; i++){
+                              divTracks.appendChild(heading5);
+                              for (var j = 0; j < albumTracks.length; j++){
                               var div10 = document.createElement("div");
                               div10.className = "card";
                               div10.style = "border:0px;";
-                              var heading6 = document.createElement("h5");
-                              heading6.className = "mb-0";
+                              var heading7 = document.createElement("h5");
+                              heading7.className = "mb-0";
                               var button1 = document.createElement("button");
                               button1.className = "btn btn-link btn-wrap-text text-dark";
-                              button1.innerHTML = albumTracks[i].track_number + '. ' + albumTracks[i].name;
-                              heading6.appendChild(button1);
-                              div10.appendChild(heading6);
+                              button1.innerHTML = albumTracks[j].track_number + '. ' + albumTracks[j].name;
+                              heading7.appendChild(button1);
+                              div10.appendChild(heading7);
                               divTracks.appendChild(div10);
                                       }
                                   }
+                              divTracks.appendChild(heading6);
+                              divTracks.innerHTML += 'Released: ' + albumItems[i].release_date +"<br/>";
+                              divTracks.innerHTML += "<a href="+albumItems[i].external_urls.spotify+" target='_blank'>Spotify</a>";
                               }
 
 
@@ -210,13 +217,12 @@
                         div7.appendChild(heading1);
                         div7.appendChild(heading2);
                         div7.appendChild(heading3);
-                        div7.appendChild(heading4);
+                        //div7.appendChild(heading4);
                         div5.appendChild(div6);
                         div5.appendChild(div7);
                         div4.appendChild(div5);
                         div3.appendChild(div4);
                         div2.appendChild(div3);
-                        div8.appendChild(heading5);
                         div8.appendChild(divTracks);
                         div2.appendChild(div8);
                         div1.appendChild(div2);
