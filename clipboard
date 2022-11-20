@@ -1,0 +1,56 @@
+clipboard
+
+
+function appendData(data) {
+    var mainContainer = document.getElementById("bubbelispotify");
+    for (var i = 0; i < data.length; i++) {
+        var div1 = document.createElement("div");
+        div1.id = data[i].id;
+        var div2 = document.createElement("div");
+        div2.class = "card mb-4";
+        div2.style = "border:0px";
+        var div3 = document.createElement("div");
+        div3.id = data[i].id+i;
+        div3.class = "rounded border";
+        var div4 = document.createElement("div");
+        div4.class = "btn btn-link btn-wrap-text collapsed text-dark";
+        div4['data-toggle'] = "collapse";
+        div4['data-target'] = "#" + data[i].id + i + i;
+        div4['aria-expanded'] = "false";
+        div4['aria-controls'] = data[i].id + i + i;
+        var div5 = document.createElement("div");
+        div5.class = "row";
+        var div6 = document.createElement("div");
+        div6.class = "col-md-5 pl-0 pr-0 align-self-center";
+        var div7 = document.createElement("div");
+        div7.class = "col-md-7 pl-0 pr-0 align-self-center";
+        var heading1 = document.createElement("h5");
+        heading1.class = "mb-0";
+        var heading2 = document.createElement("h2");
+        heading2.innerHTML = data[i].name;
+        var heading3 = document.createElement("h5");
+        heading3.innerHTML = data[i].album_type;
+        var heading4 = document.createElement("h6");
+        heading4.style = "font-family:monospace";
+        heading4.innerHTML = data[i].release_date;
+        var div8 = document.createElement("div");
+        div8.id = data[i].id + i + i;
+        div8.class = "collapse";
+        div8['aria-labelledby'] = data[i].id + i;
+        div8['data-parent'] = "#" + data[i].id;
+
+        heading1.appendChild(heading2);
+        heading1.appendChild(heading3);
+        heading1.appendChild(heading4);
+        div7.appendChild(heading1);
+        div6.appendChild(div7);
+        div5.appendChild(div6);
+        div4.appendChild(div5);
+        div3.appendChild(div4);
+        div2.appendChild(div3);
+        div1.appendChild(div2);
+        mainContainer.appendChild(div1);
+
+    }
+}
+</script>
