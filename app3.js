@@ -7,31 +7,35 @@
  * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
  */
 
+ var client_id = "0be00787b5e44ac399cc93d252cbdcd8";
+ var client_secret = "b86671e3e44d407ca7e27cefd9f64041"; // Your secret
 
-var client_id = "asd";
-var client_secret = "asd"; // Your secret
+ async function authorize() {
+         let myHeaders = new Headers();
+         myHeaders.append("Authorization", 'Basic ' + btoa(client_id + ':' + client_secret));
+         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-localStorage.setItem("access_token", null);
+         var urlencoded = new URLSearchParams();
+         urlencoded.append("grant_type", "client_credentials");
 
-const fetchToken = fetch('https://accounts.spotify.com/api/token', {
-          method: 'POST',
-          headers: {
-              'Authorization': 'Basic ' + client_id.toString('base64') + ':' + client_secret.toString('base64')
-          },
-          form: {
-            grant_type: 'client_credentials'
-          },
-          json: true
+         const requestOptions = {
+         method: 'POST',
+         headers: myHeaders,
+         body: urlencoded,
+         redirect: 'follow'
+         }
 
-      })
-      .then(response => response.json());
-
-console.log("fetchtoken: " + fetchToken.access_token);
-localStorage.setItem("access_token", fetchToken.access_token);
+         let res = await fetch("https://accounts.spotify.com/api/token", requestOptions);
+         res = await res.json();
+         console.log(res.access_token);
+         return res.access_token;
+     }
 
 
-  console.log("token before albumapi: "+access_token);
     async function getArtistData() {
+      const access_token = await this.authorize();
+
+        console.log("token before albumapi: "+access_token);
     const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
               method: 'GET',
               headers: {
@@ -52,11 +56,10 @@ localStorage.setItem("access_token", fetchToken.access_token);
           var div1 = document.createElement("div");
           div1.id = 'accordion'+albumItems[i].id;
           var div2 = document.createElement("div");
-          div2.className = "card mb-4";
+          div2.className = "card mb-2 mt-2 border-top";
           div2.style = "border:0px";
           var div3 = document.createElement("div");
           div3.id = 'heading'+albumItems[i].id;
-          div3.className = "rounded border";
           var div4 = document.createElement("div");
           div4.className = "btn btn-link btn-wrap-text collapsed text-dark";
           div4.setAttribute('data-toggle','collapse');
@@ -66,9 +69,9 @@ localStorage.setItem("access_token", fetchToken.access_token);
           var div5 = document.createElement("div");
           div5.className = "row";
           var div6 = document.createElement("div");
-          div6.className= "col-md-5 pl-0 pr-0 align-self-center";
+          div6.className= "col-md-6 pl-0 pr-0 align-self-center";
           var div7 = document.createElement("div");
-          div7.className= "col-md-7 pl-0 pr-0 align-self-center";
+          div7.className= "col-md-6 pl-0 pr-0 align-self-center";
           var heading1 = document.createElement("h5");
           heading1.className= "mb-0";
           var heading2 = document.createElement("h3");
@@ -134,11 +137,14 @@ localStorage.setItem("access_token", fetchToken.access_token);
                 divTracks.appendChild(div10);
                         }
                     }
-                divTracks.appendChild(heading6);
-                divTracks.innerHTML += 'Released: ' + albumItems[i].release_date +"<br/>";
-                divTracks.innerHTML += "<a href="+albumItems[i].external_urls.spotify+" target='_blank'>Spotify</a>";
+                //divTracks.appendChild(heading6);
+                divTracks.innerHTML += '</br>Released: ' + albumItems[i].release_date +"<br/>";
+                divTracks.innerHTML += "<a href="+albumItems[i].external_urls.spotify+" target='_blank'>Spotify</a>"+"<br/>";
                 }
 
+
+          var hr = document.createElement("div");
+          hr.innerHTML = "*"
 
           div6.appendChild(img);
 
@@ -154,6 +160,7 @@ localStorage.setItem("access_token", fetchToken.access_token);
           div8.appendChild(divTracks);
           div2.appendChild(div8);
           div1.appendChild(div2);
+          //div1.appendChild(hr);
           mainContainer.appendChild(div1);
 
           }
