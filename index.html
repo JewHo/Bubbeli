@@ -20,7 +20,7 @@
     <meta name="keywords" content="bubbeli, mååhe, midnattsäventyr, mååhe text, mååhe betydelse, mååhe lyrics, sebastian lindgren, bubbeli_official_, mååhe bubbeli, mååhe bubbeli text">
 
     <title>Bubbeli</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/vapen_color.png" />
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -33,6 +33,9 @@
          - preloader.gif (for browsers that do not support CSS animations) -->
     <link rel="stylesheet" href="css/default-skin/default-skin.css">
 
+
+
+
   </head>
 
 
@@ -41,211 +44,38 @@
     <div class="">
       <nav class="navlineheight" style="font-size: 1rem">  <!-- Navbar -->
         <div id="scrolla" class="rounded-top navbar-light text-dark newnavbarpad">
-            <!--<a href="#Music" class="text-dark navpadding"><font size="5">MUSIC</font></a>
-            <a href="#About" class="text-dark"><font size="5">ABOUT</font></a>
-            <a href="#Live" class="text-dark"><font size="5">LIVE</font></a>
-            <a href="#Contact" class="text-dark navpadding"><font size="5">CONTACT</font></a>
-            <a href="#Photos" class="text-dark navpadding"><font size="5">PHOTOS</font></a>-->
 
-            <a href="#Music" class="btn text-dark navfontsize">MUSIC</a>
-            <a href="#Contact" class="btn text-dark navfontsize">CONTACT</a>
-            <a href="#Photos" class="btn text-dark navfontsize">PHOTOS</a>
-
+          <img src="img/bnwbub.png" alt="BUBBELI" class="pt-3">
         </div>
       </nav>
       <!-- Page Content -->
       <div class="">
         <div id="center" class="container">
-          <!--<h1 class="mt-3 text-center bigassfont">BUBBELI</h1>-->
-          <!-- Main photo -->
-          <div class="filler">
-            <!--<h1 class="mt-3 mb-0 text-center bigassfont" style="font-family:Arial; -webkit-text-stroke: 2px black; height: 50%">BUBBELI</h1>-->
-            &nbsp;
-          </div>
-          <div id="carouselExampleSlidesOnly" class="carousel slide mt-3 mb-4 shadow-lg" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-caption skugga">
-                  <!--<h1 class="mt-3 text-center">Bubbeli</h1>
-                  <p class="lead pb-2 text-center"><font size="7">&</font></br>THE RUNEBERG ORCHESTRA</p>
 
-
-                  <a href="https://open.spotify.com/artist/2hUKFORuqeQo6iUSlTmOVq?si=eJZGbAAnTQKbh8dJJsguQw" target="_blank">
-                    <img src="img/spotify.svg" title="Spotify" alt="Spotify" style="color: white">
-                  </a>
-                  <a href="https://itunes.apple.com/us/artist/bubbeli/1439676537" target="_blank">
-                    <img src="img/itunes.svg" title="Apple Music" alt="Apple Music">
-                  </a>
-                  <a href="https://www.instagram.com/bubbeli_official_/" target="_blank">
-                    <img src="img/instagram.svg" title="Instagram" alt="Instagram">
-                  </a>
-                  <a href="https://www.facebook.com/Bubbeliofficial/" target="_blank">
-                    <img src="img/facebook.svg" title="Facebook" alt="Facebook">
-                  </a>
-                  -->
-              </div>
-              <div class="carousel-item active">
-                <!--<img class="d-block w-100 rounded" src="img/Bubbeli_Pussikalja.png" alt="">-->
-                <!--<figcaption class="figure-caption my-class rounded-bottom">Image by Samuel Salminen</figcaption>-->
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Divider scroll down -->
-          <ul class="nav nav-list" id="Music">
-              <li class="divider mb-3"></li>
-            </ul>
-
+          <hr width="15%">
           <!-- Music and Lyrics -->
-          <div class="card mb-4 shadow-lg">
+          <div class="mb-4">
             <div class="card-body">
-              <h5 class="card-title"><font size="7" class="">MUSIC</font></h5>
+              <h5 class="card-title"><font size="7" class="">RELEASES</font></h5>
 
               <div id="bubbelispotify"></div>
+              <!-- <script type="text/javascript" src="app2.js"></script> -->
 
               <script>
-                var token = "BQDVsv6FZrDLLQk6fkITAmF7GK5jfnVPViBZcOfAVEQBvypq6bPSumNLYChnashgipzB_lzjkmCgGq1J6";
-                  async function getArtistData() {
-                  const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                                'Authorization': 'Bearer ' + token
-                            }
-
-                        })
-                        .then(response => response.json());
-                  console.log(artistResponse);
-                  appendData(artistResponse);
-                  async function appendData(data) {
-                      const albumItems = data.items;
-                      console.log(albumItems);
-                      var mainContainer = document.getElementById("bubbelispotify");
-                      for (var i = 0; i < albumItems.length; i++) {
-                        var div1 = document.createElement("div");
-                        div1.id = 'accordion'+albumItems[i].id;
-                        var div2 = document.createElement("div");
-                        div2.className = "card mb-4";
-                        div2.style = "border:0px";
-                        var div3 = document.createElement("div");
-                        div3.id = 'heading'+albumItems[i].id;
-                        div3.className = "rounded border";
-                        var div4 = document.createElement("div");
-                        div4.className = "btn btn-link btn-wrap-text collapsed text-dark";
-                        div4.setAttribute('data-toggle','collapse');
-                        div4.setAttribute('data-target', "#collapse" + albumItems[i].id);
-                        div4.setAttribute('aria-expanded',"false");
-                        div4.setAttribute('aria-controls','collapse'+albumItems[i].id);
-                        var div5 = document.createElement("div");
-                        div5.className = "row";
-                        var div6 = document.createElement("div");
-                        div6.className= "col-md-5 pl-0 pr-0 align-self-center";
-                        var div7 = document.createElement("div");
-                        div7.className= "col-md-7 pl-0 pr-0 align-self-center";
-                        var heading1 = document.createElement("h5");
-                        heading1.className= "mb-0";
-                        var heading2 = document.createElement("h3");
-                        heading2.innerHTML = albumItems[i].name;
-                        heading2.style = "font-family:monospace"
-                        var heading3 = document.createElement("h5");
-                        heading3.innerHTML = albumItems[i].album_type;
-                        //var heading4 = document.createElement("h6");
-                        //heading4.style = "font-family:monospace";
-                        //heading4.innerHTML = albumItems[i].release_date;
-                        var div8 = document.createElement("div");
-                        div8.id = 'collapse'+albumItems[i].id;
-                        div8.className= "collapse";
-                        div8.setAttribute('aria-labelledby','heading'+albumItems[i].id);
-                        div8.setAttribute('data-parent',"#accordion" + albumItems[i].id);
-                        var heading5 = document.createElement("h2");
-                        heading5.className = "card-title mt-3";
-                        heading5.innerHTML = "Tracklist";
-                        var heading6 = document.createElement("h4");
-                        heading6.className = "card-title mt-3";
-                        heading6.innerHTML = "Info";
-                        var img = document.createElement("img");
-                        img.src = albumItems[i].images[1].url;
-                        img.className = "img-responsive rounded";
-                        img.width = "210";
-                        img.height = "210";
-                        var divTracks = document.createElement("div");
-                        divTracks.id = "accordion";
-                        divTracks.style = "font-family:monospace;";
-                        //var accessTokenAlbumTrack = "BQABtm-KXVa0z0ra7Dv3bei_zF2TrchpFlIEYfMrOjlRhElqFWtzPcEz5Q8m8kDeqOhi9FFtD_srs6yoCj8ghiC2cfc3_W7BFzvJg1fsxMeYTWTVEhYyCJc0hAukj8GgOx2MM4uGW-vyQPlzP4w-j__OpvM8t0W5PMg9lSXDK15MpOU"
-                        var albumUrl = 'https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks'
-                        const albumDataRequest = await fetch('https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks', {
-                                          method: 'GET',
-                                          headers: {
-                                              'Accept': 'application/json',
-                                              'Content-Type': 'application/json',
-                                              'Authorization': 'Bearer ' + token
-                                          }
-                                      })
-                          .then((response) => response.json())
-                          .then((data) => {
-                                      appendAlbumData(data);
-                                    })
-                          .catch(function (err) {
-                                        console.log('error: ' + err);
-                                    });
-                        async function appendAlbumData(data) {
-                            const albumTracks = data.items;
-                            console.log(albumTracks);
-                            if (albumTracks.length > 1) {
-                              divTracks.appendChild(heading5);
-                              for (var j = 0; j < albumTracks.length; j++){
-                              var div10 = document.createElement("div");
-                              div10.className = "card";
-                              div10.style = "border:0px;";
-                              var heading7 = document.createElement("h5");
-                              heading7.className = "mb-0";
-                              var button1 = document.createElement("button");
-                              button1.className = "btn btn-link btn-wrap-text text-dark";
-                              button1.innerHTML = albumTracks[j].track_number + '. ' + albumTracks[j].name;
-                              heading7.appendChild(button1);
-                              div10.appendChild(heading7);
-                              divTracks.appendChild(div10);
-                                      }
-                                  }
-                              divTracks.appendChild(heading6);
-                              divTracks.innerHTML += 'Released: ' + albumItems[i].release_date +"<br/>";
-                              divTracks.innerHTML += "<a href="+albumItems[i].external_urls.spotify+" target='_blank'>Spotify</a>";
-                              }
-
-
-                        div6.appendChild(img);
-
-                        div7.appendChild(heading1);
-                        div7.appendChild(heading2);
-                        div7.appendChild(heading3);
-                        //div7.appendChild(heading4);
-                        div5.appendChild(div6);
-                        div5.appendChild(div7);
-                        div4.appendChild(div5);
-                        div3.appendChild(div4);
-                        div2.appendChild(div3);
-                        div8.appendChild(divTracks);
-                        div2.appendChild(div8);
-                        div1.appendChild(div2);
-                        mainContainer.appendChild(div1);
-
-                  }
-                }
-              }
-              getArtistData();
+                console.log("boom");
               </script>
+
               <div id="accordionMååhe">
                 <div class="card" style="border:0px;">
-                    <div  id="headingMååhe" class="rounded border">
+                    <div  id="headingMååhe">
                       <div class="btn btn-link btn-wrap-text collapsed text-dark" data-toggle="collapse" data-target="#collapseMååhe" aria-expanded="false" aria-controls="collapseMååhe">
 
                         <div class="row">
-                          <div class="col-md-5 pl-0 pr-0 align-self-center">
+                          <div class="col-md-6 pl-0 pr-0 align-self-center">
 
                             <img src="https://d33wubrfki0l68.cloudfront.net/img/06c97e9f21e55994ea34bb5a75fe472105318991/albumcover.jpg" class="img-responsive rounded" width="210" height="210">
                           </div>
-                          <div class="col-md-7 pl-0 pr-0 align-self-center">
+                          <div class="col-md-6 pl-0 pr-0 align-self-center">
                             <h5 class="mb-0">
                               <h2>MÅÅhe</h2>
                               <h5>Album</h5><h6 style="font-family:monospace;">2018</h6>
@@ -537,7 +367,7 @@
                           </div>
                         </div>
                       </div>
-                      <hr>
+                      <hr width="15%">
                       <div class="container mb-3">
 
                           <div class="pl-0 pr-0 align-self-center">
@@ -886,245 +716,36 @@
             </div>
           </div>
 
-          <!-- Divider scroll down -->
-          <!--<ul class="nav nav-list" id="About">
-            <li class="divider mb-3"></li>
-          </ul>-->
-
-          <!-- About Bubbeli -->
-          <!--<div class="card mb-4 shadow-lg">
-            <div class="card-body">
-            <h5 class="card-title"><font size="7" class="">ABOUT</font></h5>
-              <div class="align-self-center">
-                <div class="card-body pl-1 pr-1">
-                  <p class="card-text" style="font-family:monospace;">
-                    Bubbeli is Sebastian Lindgren's solo project. The music is a mixture of reggae, soul, indie and pop in Swedish, Finnish and English.
-                  </br>
-                  </br>
-                  The debut album "Mååhe" was released in 2018. The singles "Mååhe" and "Midnattsäventyr" were on Finnish-Swedish radio's playlists for several months and the title track was chosen as the Finnish-Swedish song of the year in 2019.
-                  After a pandemic break, Bubbeli released the single "En solig dag" 2021, which was also played extensively on Finnish-Swedish radio.
-                  Bubbeli's sophmore album "Suomi & Ruotsi" will be released in 2022.
-                  </br>
-                  </br>
-                    The Runeberg Orchesta is a collective of musicians and friends backing up Bubbeli on live shows. The band features a small horn section, keyboards, guitar and bass.<br/>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>-->
-
-          <!-- Divider scroll down -->
-          <ul class="nav nav-list" id="Contact">
-            <li class="divider mb-3"></li>
-          </ul>
+          <hr width="15%">
 
           <!-- Contact -->
-          <div class="card mb-4 shadow-lg">
+          <div class="mb-4">
               <div class="card-body">
-                <h5 class="card-title"><font size="7" class="">Contact</font></h5>
                 <p class="card-text" style="font-family:monospace;">
                   Information and booking:<br/> <a href="mailto:bubbeli.rbo@gmail.com?Subject=Mååhe"><i>bubbeli.rbo@gmail.com</i></a><br/>
                   <a href="tel:+358400258677">+358400258677</a><br/>
-                  <br/>
-                  Links:<br/>
-                  <a href="https://open.spotify.com/artist/2hUKFORuqeQo6iUSlTmOVq?si=eJZGbAAnTQKbh8dJJsguQw" target="_blank">SPOTIFY</a><br/>
-                  <a href="https://itunes.apple.com/us/artist/bubbeli/1439676537" target="_blank">APPLE MUSIC</a><br/>
-                  <a href="https://soundcloud.com/ubbeli" target="_blank">SOUNDCLOUD</a><br/>
-                  <a href="https://www.facebook.com/Bubbeliofficial/" target="_blank">FACEBOOK</a><br/>
-                  <a href="https://www.instagram.com/bubbeli_official_/" target="_blank">INSTAGRAM</a><br/>
-                </p>
               </div>
             </div>
 
-          <!-- Divider scroll down -->
-          <ul class="nav nav-list" id="Photos">
-            <li class="divider mb-3"></li>
-          </ul>
-
-          <!-- Photos -->
-          <div class="card mb-4 shadow-lg">
-            <div class="card-body">
-              <h5 class="card-title"><font size="7" class="">PHOTOS</font></h5>
-                <div class="my-gallery" style="font-family:monospace;" itemscope>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/promo1.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/promo1.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">10/10/2018 - Image by Samuel Salminen</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/bubbelisky.jpg" itemprop="contentUrl" data-size="">
-                          <img src="img/bubbelisky.jpg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">10/10/2018 - Image by Samuel Salminen</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/promo3.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/promo3.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">10/10/2018 - Image by Samuel Salminen</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/bubbelibro.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/bubbelibro.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">3/5/2019 - Image by Carl-Anton Storbacka</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/samsafoto2.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/samsafoto2.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Image by Samuel Salminen</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/samsafoto4.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/samsafoto4.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Image by Samuel Salminen</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/m_t.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/m_t.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Musik och talang</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/m_t_1.jpg" itemprop="contentUrl" data-size="">
-                          <img src="img/m_t_1.jpg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Musik och talang</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/m_t_2.jpg" itemprop="contentUrl" data-size="">
-                          <img src="img/m_t_2.jpg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Musik och talang</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/m_t_3.jpg" itemprop="contentUrl" data-size="">
-                          <img src="img/m_t_3.jpg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Musik och talang</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/griswald.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/griswald.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Nordischer Klang</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/IMG_3089_fullres.jpg" itemprop="contentUrl" data-size="">
-                          <img src="img/IMG_3089_fullres.jpg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Image by Emil Lindqvist</figcaption>
-                  </figure>
-
-                  <figure itemprop="associatedMedia" itemscope>
-                      <a href="img/skumt.jpeg" itemprop="contentUrl" data-size="">
-                          <img src="img/skumt.jpeg" itemprop="thumbnail" alt="Mååhe" />
-                      </a>
-                      <figcaption itemprop="caption description">Skumt events</figcaption>
-                  </figure>
-
-                </div>
-
-                <!-- Root element of PhotoSwipe. Must have class pswp. -->
-                <div class="pswp" style="font-family:monospace;" tabindex="-1" role="dialog" aria-hidden="true">
-
-                    <!-- Background of PhotoSwipe.
-                         It's a separate element as animating opacity is faster than rgba(). -->
-                    <div class="pswp__bg"></div>
-
-                    <!-- Slides wrapper with overflow:hidden. -->
-                    <div class="pswp__scroll-wrap">
-
-                        <!-- Container that holds slides.
-                            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                            Don't modify these 3 pswp__item elements, data is added later on. -->
-                        <div class="pswp__container">
-                            <div class="pswp__item"></div>
-                            <div class="pswp__item"></div>
-                            <div class="pswp__item"></div>
-                        </div>
-
-                        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                        <div class="pswp__ui pswp__ui--hidden">
-
-                            <div class="pswp__top-bar">
-
-                                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                                <div class="pswp__counter"></div>
-
-                                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-                                <!-- element will get class pswp__preloader--active when preloader is running -->
-                                <div class="pswp__preloader">
-                                    <div class="pswp__preloader__icn">
-                                      <div class="pswp__preloader__cut">
-                                        <div class="pswp__preloader__donut"></div>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                            </button>
-
-                            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                            </button>
-
-                            <div class="pswp__caption">
-                                <div class="pswp__caption__center" style="text-align: center;"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-          </div>
+          <hr width="15%">
 
           <!-- Also International -->
-          <div class="card mb-4 shadow-lg">
+          <div class="mb-4">
             <div class="card-body">
-            <h5 class="card-title"><font size="7" class="">ALSO INTERNATIONAL</font></h5>
-              <div class="align-self-center">
-                <div class="card-body pl-1 pr-1">
+              <p class="card-text" style="font-family:monospace;"><font size="2">Bubbeli's side project: </font></p>
+                <h5 class="card-title"><font size="5" class="">ALSO INTERNATIONAL</font></h5>
                   <p class="card-text" style="font-family:monospace;">
-                    <a href="https://open.spotify.com/artist/2L6FuYrQzJBXOg279b0Uof?si=S9_ng3lkRJGZZseOITeZwQ" target="_blank">SPOTIFY</a><br/>
-                    <a href="https://music.apple.com/fi/artist/also-international/1508839237" target="_blank">APPLE MUSIC</a><br/>
-                    <a href="https://www.instagram.com/also_international/" target="_blank">INSTAGRAM</a><br/>
-                    <br/>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/uJM4kFZwVHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/u2gSrgm93UQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-              </div>
+                    <font size="2">
+                      <a href="https://open.spotify.com/artist/2L6FuYrQzJBXOg279b0Uof?si=S9_ng3lkRJGZZseOITeZwQ" target="_blank">SPOTIFY</a>
+                      <a href="https://music.apple.com/fi/artist/also-international/1508839237" target="_blank">APPLE MUSIC</a>
+                      <a href="https://www.instagram.com/also_international/" target="_blank">INSTAGRAM</a>
+                    </font>
+                  </p>
+
             </div>
           </div>
 
-          <img src="img/en.png" style="height:20px;"alt="">
-          <img src="img/solig.png" style="height:20px;"alt="">
-          <img src="img/dag.png" style="height:20px;"alt="">
+          <hr width="15%">
 
         </div>
         <!--<div class="aside aside-1">
@@ -1245,7 +866,7 @@
 
       <div class="footer1 bubbeli1" style="position: fixed; font-family:monospace; text-align: center; padding-right: 0.75rem !important; padding-left: 0.75rem !important;" id="myDIV">
         <div class="pb-0 pt-0" id="center">
-          <text style="vertical-align: middle;">By visiting this site, you consent to the use of cookies. <a href="" data-toggle="modal" data-target="#exampleModalLong">Learn more</a>
+          <text style="vertical-align: middle;"><font size="0.5">By visiting this site, you consent to the use of cookies. <a href="" data-toggle="modal" data-target="#exampleModalLong">Learn more</a></font>
           <a onclick="myFunction()" class="close1 pl-1 pr-1">&times;</a>
         </text>
         </div>
@@ -1263,6 +884,8 @@
 
     <!-- UI JS file -->
     <script src="js/photoswipe-ui-default.min.js"></script>
+
+
 
   </body>
 
