@@ -27,7 +27,6 @@
 
          let res = await fetch("https://accounts.spotify.com/api/token", requestOptions);
          res = await res.json();
-         console.log(res.access_token);
          return res.access_token;
      }
 
@@ -35,7 +34,6 @@
     async function getArtistData() {
       const access_token = await this.authorize();
 
-        console.log("token before albumapi: "+access_token);
     const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
               method: 'GET',
               headers: {
@@ -46,11 +44,9 @@
 
           })
           .then(response => response.json());
-    console.log(artistResponse);
     appendData(artistResponse);
     async function appendData(data) {
         const albumItems = data.items;
-        console.log(albumItems);
         var mainContainer = document.getElementById("bubbelispotify");
         for (var i = 0; i < albumItems.length; i++) {
           var div1 = document.createElement("div");
@@ -63,7 +59,6 @@
           var div4 = document.createElement("div");
           div4.className = "btn btn-link btn-wrap-text collapsed text-dark";
           div4.setAttribute('onclick', "window.open('"+albumItems[i].external_urls.spotify+"');");
-          console.log(albumItems[i].external_urls.spotify);
           div4.setAttribute('data-toggle','collapse');
           div4.setAttribute('data-target', '#collapse'+albumItems[i].id);
           div4.setAttribute('aria-expanded','false');
