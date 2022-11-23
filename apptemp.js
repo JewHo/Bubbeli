@@ -62,6 +62,8 @@
           div3.id = 'heading'+albumItems[i].id;
           var div4 = document.createElement("div");
           div4.className = "btn btn-link btn-wrap-text collapsed text-dark";
+          div4.setAttribute('onclick', "window.open('"+albumItems[i].external_urls.spotify+"');");
+          console.log(albumItems[i].external_urls.spotify);
           div4.setAttribute('data-toggle','collapse');
           div4.setAttribute('data-target', '#collapse'+albumItems[i].id);
           div4.setAttribute('aria-expanded','false');
@@ -102,46 +104,6 @@
           var divTracks = document.createElement("div");
           divTracks.id = "accordion";
           divTracks.style = "font-family:monospace;";
-          //var accessTokenAlbumTrack = "BQABtm-KXVa0z0ra7Dv3bei_zF2TrchpFlIEYfMrOjlRhElqFWtzPcEz5Q8m8kDeqOhi9FFtD_srs6yoCj8ghiC2cfc3_W7BFzvJg1fsxMeYTWTVEhYyCJc0hAukj8GgOx2MM4uGW-vyQPlzP4w-j__OpvM8t0W5PMg9lSXDK15MpOU"
-          var albumUrl = 'https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks'
-          const albumDataRequest = await fetch('https://api.spotify.com/v1/albums/'+albumItems[i].id+'/tracks', {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                                'Authorization': 'Bearer ' + access_token
-                            }
-                        })
-            .then((response) => response.json())
-            .then((data) => {
-                        appendAlbumData(data);
-                      })
-            .catch(function (err) {
-                          console.log('error: ' + err);
-                      });
-          async function appendAlbumData(data) {
-              const albumTracks = data.items;
-              console.log(albumTracks);
-              if (albumTracks.length > 1) {
-                divTracks.appendChild(heading5);
-                for (var j = 0; j < albumTracks.length; j++){
-                var div10 = document.createElement("div");
-                div10.className = "card";
-                div10.style = "border:0px;";
-                var heading7 = document.createElement("h5");
-                heading7.className = "mb-0";
-                var button1 = document.createElement("button");
-                button1.className = "btn btn-link btn-wrap-text text-dark";
-                button1.innerHTML = albumTracks[j].track_number + '. ' + albumTracks[j].name;
-                heading7.appendChild(button1);
-                div10.appendChild(heading7);
-                divTracks.appendChild(div10);
-                        }
-                    }
-                //divTracks.appendChild(heading6);
-                divTracks.innerHTML += '</br>Released: ' + albumItems[i].release_date +"<br/>";
-                divTracks.innerHTML += "<a href="+albumItems[i].external_urls.spotify+" target='_blank'>Spotify</a>"+"<br/>";
-                }
 
 
           var hr = document.createElement("div");
@@ -158,7 +120,7 @@
           div4.appendChild(div5);
           div3.appendChild(div4);
           div2.appendChild(div3);
-          div8.appendChild(divTracks);
+          //div8.appendChild(divTracks);
           div2.appendChild(div8);
           div1.appendChild(div2);
           //div1.appendChild(hr);
