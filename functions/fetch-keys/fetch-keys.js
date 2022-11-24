@@ -1,5 +1,6 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 
+import fetch from 'node-fetch'
 
 const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
 var client_id = process.env.MY_KEY;
