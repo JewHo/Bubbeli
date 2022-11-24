@@ -58,7 +58,7 @@
               <div id="bubbelispotify"></div>
               <script>
                 fetch('/.netlify/functions/fetch-keys')
-                  .then(res => res)
+                  .then(res => response.json())
               </script>
             </div>
           </div>
@@ -197,7 +197,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/myscripts.js"></script>
-    <script type=’text/javascript’ src=’config.js’></script>
 
 
 
