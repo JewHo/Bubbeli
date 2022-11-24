@@ -6,9 +6,11 @@
  * For more information, read
  * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
  */
+import config from "./config.js";
 
- var client_id = "0be00787b5e44ac399cc93d252cbdcd8";
- var client_secret = "b86671e3e44d407ca7e27cefd9f64041"; // Your secret
+
+ var client_id = config.MY_KEY;
+ var client_secret = config.SECRET_KEY; // Your secret
 
  async function authorize() {
          let myHeaders = new Headers();

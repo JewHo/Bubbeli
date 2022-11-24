@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "request": "^2.88.2"
+  },
+  "scripts": {
+    "dev": "http-server ./ -p 1313",
+    "netlify" : "./node_modules/.bin/netlify"
+  },
+  "devDependencies": {
+    "netlify-cli": "^12.2.7"
   }
 }
