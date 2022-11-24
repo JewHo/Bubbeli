@@ -22,7 +22,7 @@ const handler = async (event) => {
     try {
     let res = await fetch("https://accounts.spotify.com/api/token", requestOptions);
     res = await res.json();
-
+    console.log(res);
     return { statusCode: 200, body: JSON.stringify(res) }
 
   } catch (error) {
