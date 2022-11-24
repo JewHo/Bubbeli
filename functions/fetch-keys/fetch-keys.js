@@ -1,4 +1,6 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+import fetch from "node-fetch";
+
 const handler = async (event) => {
 
     var client_id = process.env.MY_KEY;
