@@ -4,16 +4,16 @@ const handler = async (event) => {
     var client_id = process.env.MY_KEY;
     var client_secret = process.env.SECRET_KEY; // Your secret
 
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", 'Basic ' + btoa(client_id + ':' + client_secret));
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     var urlencoded = new URLSearchParams();
     urlencoded.append("grant_type", "client_credentials");
 
     const requestOptions = {
             method: 'POST',
-            headers: myHeaders,
+            headers: {
+              'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret),
+              'Content-Type': "application/x-www-form-urlencoded"
+            },
             body: urlencoded,
             redirect: 'follow'
           }
