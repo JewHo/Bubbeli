@@ -6,35 +6,9 @@
  * For more information, read
  * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
  */
-import config from "./config.js";
-
-
- var client_id = config.MY_KEY;
- var client_secret = config.SECRET_KEY; // Your secret
-
- async function authorize() {
-         let myHeaders = new Headers();
-         myHeaders.append("Authorization", 'Basic ' + btoa(client_id + ':' + client_secret));
-         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-
-         var urlencoded = new URLSearchParams();
-         urlencoded.append("grant_type", "client_credentials");
-
-         const requestOptions = {
-         method: 'POST',
-         headers: myHeaders,
-         body: urlencoded,
-         redirect: 'follow'
-         }
-
-         let res = await fetch("https://accounts.spotify.com/api/token", requestOptions);
-         res = await res.json();
-         return res.access_token;
-     }
-
-
-    async function getArtistData() {
-      const access_token = await this.authorize();
+ async function getArtistData() {
+ const tokenResponse = await fetch('/.netlify/functions/fetch-keys').then((response) => response.json());
+ const access_token = tokenResponse.access_token
 
     const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
               method: 'GET',

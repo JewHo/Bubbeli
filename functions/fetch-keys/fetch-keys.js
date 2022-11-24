@@ -19,8 +19,9 @@ const handler = async (event) => {
           }
     try {
     let res = await fetch("https://accounts.spotify.com/api/token", requestOptions);
+    res = await res.json();
 
-    return { statusCode : 200, body: JSON.stringify(res) }
+    return { statusCode: 200, body: JSON.stringify(res) }
 
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
