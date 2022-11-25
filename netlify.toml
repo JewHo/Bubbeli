@@ -1,3 +1,4 @@
 [build]
   functions = "functions/"
   publish = "./"
+  command = "npm run-script build"
