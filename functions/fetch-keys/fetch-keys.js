@@ -2,26 +2,30 @@
 
 import fetch from "node-fetch";
 
+const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
+var client_id = process.env.MY_KEY;
+var client_secret = process.env.SECRET_KEY; // Your secret
+
+var urlencoded = new URLSearchParams();
+urlencoded.append("grant_type", "client_credentials");
+console.log(urlencoded);
+console.log(client_id);
+
+const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + btoa(process.env.MY_KEY + ':' + process.env.SECRET_KEY),
+          'Content-Type': "application/x-www-form-urlencoded"
+        },
+        body: urlencoded,
+        redirect: 'follow'
+      }
+console.log(requestOptions);
 
 exports.handler = async (event, context) => {
   console.log('Helo wrld');
   try {
-    const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
-    //var client_id = process.env.MY_KEY;
-    //var client_secret = process.env.SECRET_KEY; // Your secret
 
-    var urlencoded = new URLSearchParams();
-    urlencoded.append("grant_type", "client_credentials");
-
-    const requestOptions = {
-            method: 'POST',
-            headers: {
-              'Authorization': 'Basic ' + btoa(process.env.MY_KEY + ':' + process.env.SECRET_KEY),
-              'Content-Type': "application/x-www-form-urlencoded"
-            },
-            body: urlencoded,
-            redirect: 'follow'
-          }
     const response = await fetch(API_ENDPOINT, requestOptions);
     const data = await response.json();
     return { statusCode: 200, body: JSON.stringify(data) };
