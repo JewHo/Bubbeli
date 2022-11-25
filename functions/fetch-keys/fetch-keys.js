@@ -4,7 +4,7 @@
 
 
 exports.handler = async (event, context) => {
-
+  console.log('Helo wrld');
   try {
     const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
     var client_id = process.env.MY_KEY;
