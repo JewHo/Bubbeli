@@ -23,6 +23,7 @@ exports.handler = async (event, context) => {
     const response = await fetch(API_ENDPOINT, requestOptions);
     const data = await response.json();
     return { statusCode: 200, body: JSON.stringify(data) };
+    //return { statusCode: 200, body: JSON.stringify({ client_id }) };
   } catch (error) {
     console.log(error);
     return {
