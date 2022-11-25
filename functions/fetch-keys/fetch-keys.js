@@ -7,8 +7,8 @@ exports.handler = async (event, context) => {
   console.log('Helo wrld');
   try {
     const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
-    var client_id = process.env.MY_KEY;
-    var client_secret = process.env.SECRET_KEY; // Your secret
+    //var client_id = process.env.MY_KEY;
+    //var client_secret = process.env.SECRET_KEY; // Your secret
 
     var urlencoded = new URLSearchParams();
     urlencoded.append("grant_type", "client_credentials");
@@ -16,7 +16,7 @@ exports.handler = async (event, context) => {
     const requestOptions = {
             method: 'POST',
             headers: {
-              'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret),
+              'Authorization': 'Basic ' + btoa(process.env.MY_KEY + ':' + process.env.SECRET_KEY),
               'Content-Type': "application/x-www-form-urlencoded"
             },
             body: urlencoded,
