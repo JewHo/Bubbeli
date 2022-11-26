@@ -31,7 +31,7 @@ const handler = async (event, context) => {
   try {
 
     const response = await fetch(API_ENDPOINT, requestOptions).then(res => res.json());
-    return { statusCode: 200, body: JSON.stringify(API_ENDPOINT) };
+    return { statusCode: 200, body: JSON.stringify(response) };
     //return { statusCode: 200, body: JSON.stringify({ client_id }) };
   } catch (error) {
     console.log(error);
