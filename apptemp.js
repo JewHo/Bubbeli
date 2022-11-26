@@ -48,7 +48,7 @@
           var heading1 = document.createElement("h5");
           heading1.className= "mb-0";
           heading1.innerHTML = " ";
-          var heading2 = document.createElement("h3");
+          var heading2 = document.createElement("h5");
           heading2.innerHTML = albumItems[i].name;
           heading2.style = "font-family:futura"
           heading2.className = "mt-2"
