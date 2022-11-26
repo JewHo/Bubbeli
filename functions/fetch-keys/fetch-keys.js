@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 
 
 
-exports.handler = async (event, context) => {
+const handler = async (event, context) => {
 
   console.log('Helo wrld');
   const API_ENDPOINT = 'https://accounts.spotify.com/api/token';
@@ -19,7 +19,7 @@ exports.handler = async (event, context) => {
   const requestOptions = {
           method: 'POST',
           headers: {
-            'Authorization': 'Basic ' + btoa(process.env.MY_KEY + ':' + process.env.SECRET_KEY),
+            'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret),
             'Content-Type': "application/x-www-form-urlencoded"
           },
           body: urlencoded,
@@ -40,3 +40,5 @@ exports.handler = async (event, context) => {
     };
   }
 };
+
+module.exports = { handler }
