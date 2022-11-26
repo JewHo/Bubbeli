@@ -54,7 +54,7 @@
           heading2.className = "mt-2"
           var heading3 = document.createElement("h5");
           heading3.innerHTML = albumItems[i].album_type;
-          var heading4 = document.createElement("h6");
+          var heading4 = document.createElement("h8");
           heading4.style = "font-family:futura";
           heading4.innerHTML = albumItems[i].release_date;
           var div8 = document.createElement("div");
