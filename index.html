@@ -65,9 +65,7 @@
               <script>
                 async function fetchspoti() {
                   const tokenResponse = await fetch('/.netlify/functions/fetch-keys').then((response) => response.json());
-                  const access_token = tokenResponse.access_token;
-                  console.log(access_token);
-                  return access_token;
+                  console.log(tokenResponse);
                 };
                 fetchspoti();
               </script>
