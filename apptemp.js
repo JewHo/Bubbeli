@@ -28,12 +28,12 @@
           var div1 = document.createElement("div");
           div1.id = 'accordion';
           var div2 = document.createElement("div");
-          div2.className = "card mt-2 mb-2 border-bottom";
+          div2.className = "card mt-4 border-bottom";
           div2.style = "border:0px";
           var div3 = document.createElement("div");
           div3.id = 'heading'+albumItems[i].id;
           var div4 = document.createElement("div");
-          div4.className = "btn btn-link btn-wrap-text collapsed text-dark";
+          div4.className = "mb-4 btn btn-link btn-wrap-text collapsed text-dark";
           div4.setAttribute('onclick', "window.open('"+albumItems[i].external_urls.spotify+"');");
           div4.setAttribute('data-toggle','collapse');
           div4.setAttribute('data-target', '#collapse'+albumItems[i].id);
@@ -50,11 +50,12 @@
           heading1.innerHTML = " ";
           var heading2 = document.createElement("h3");
           heading2.innerHTML = albumItems[i].name;
-          heading2.style = "font-family:monospace"
+          heading2.style = "font-family:futura"
+          heading2.className = "mt-2"
           var heading3 = document.createElement("h5");
           heading3.innerHTML = albumItems[i].album_type;
           var heading4 = document.createElement("h6");
-          heading4.style = "font-family:monospace";
+          heading4.style = "font-family:futura";
           heading4.innerHTML = albumItems[i].release_date;
           var div8 = document.createElement("div");
           div8.id = 'collapse'+albumItems[i].id;
@@ -74,7 +75,7 @@
           img.height = "210";
           var divTracks = document.createElement("div");
           divTracks.id = "accordion";
-          divTracks.style = "font-family:monospace;";
+          divTracks.style = "font-family:futura;";
 
 
           var hr = document.createElement("div");
