@@ -58,8 +58,18 @@
               <h5 class="card-title"><font size="7" class="">RELEASES</font></h5>
 
               <div id="bubbelispotify"></div>
+              <!--
               <script src="apptemp.js">
-
+              </script>
+              -->
+              <script>
+                async function fetchspoti() {
+                  const tokenResponse = await fetch('/.netlify/functions/fetch-keys').then((response) => response.json());
+                  const access_token = tokenResponse.access_token;
+                  console.log(access_token);
+                  return access_token;
+                };
+                fetchspoti();
               </script>
             </div>
           </div>
