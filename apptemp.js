@@ -10,7 +10,7 @@
  const tokenResponse = await fetch('/.netlify/functions/fetch-keys').then((response) => response.json());
  const access_token = tokenResponse.access_token
 
-    const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums', {
+    const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums?include_groups=album%2Csingle', {
               method: 'GET',
               headers: {
                   'Accept': 'application/json',
