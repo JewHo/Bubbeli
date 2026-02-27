@@ -438,7 +438,7 @@ ul#menu li {
 /* Reset cursor for footer links */
 .footer a,
 .footer1 a {
-  cursor: auto;
+  cursor: pointer;
 }
 
 .ImageBorder
