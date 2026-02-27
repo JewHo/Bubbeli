@@ -452,6 +452,7 @@ ul#menu li {
   display: inline-block;
   line-height: 1;
   cursor: pointer !important;
+  margin-bottom: -0.25rem;  /* Pull X up */
 }
 
 
