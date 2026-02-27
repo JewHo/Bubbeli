@@ -435,19 +435,15 @@ ul#menu li {
   z-index: 3;
 }
 
-/* Reset cursor for footer links */
-.footer a,
+/* Fix I-beam cursor on footer links */
 .footer1 a,
-.footer text,
-.footer1 text {
-  cursor: pointer;
-  user-select: none;
+.footer a {
+  cursor: pointer !important;
 }
 
-.close,
-.close1 {
-  cursor: pointer;
-  user-select: none;
+.footer1 text a,
+.footer text a {
+  cursor: pointer !important;
 }
 
 .ImageBorder
