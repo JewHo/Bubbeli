@@ -435,6 +435,12 @@ ul#menu li {
   z-index: 3;
 }
 
+/* Reset cursor for footer links */
+.footer a,
+.footer1 a {
+  cursor: auto;
+}
+
 .ImageBorder
 {
     border-width: 1px;
