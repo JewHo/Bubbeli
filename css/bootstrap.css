@@ -760,6 +760,7 @@ a {
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  cursor: url('../img/vapen_color.png') 25 15, auto;
 }
 
 a:hover {
