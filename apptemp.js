@@ -102,3 +102,6 @@
         }
       }
   getArtistData();
+
+// Show the page once Spotify data is ready
+document.body.style.display = 'block';
