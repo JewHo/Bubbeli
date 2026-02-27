@@ -437,8 +437,17 @@ ul#menu li {
 
 /* Reset cursor for footer links */
 .footer a,
-.footer1 a {
+.footer1 a,
+.footer text,
+.footer1 text {
   cursor: pointer;
+  user-select: none;
+}
+
+.close,
+.close1 {
+  cursor: pointer;
+  user-select: none;
 }
 
 .ImageBorder
