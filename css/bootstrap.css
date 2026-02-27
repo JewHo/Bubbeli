@@ -446,6 +446,15 @@ ul#menu li {
   cursor: pointer !important;
 }
 
+/* Align X button with text in footer */
+.close1 {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer !important;
+}
+
+
 .ImageBorder
 {
     border-width: 1px;
