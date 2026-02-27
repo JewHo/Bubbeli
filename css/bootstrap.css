@@ -435,6 +435,31 @@ ul#menu li {
   z-index: 3;
 }
 
+/* Fix I-beam cursor on footer links */
+.footer1 a,
+.footer a {
+  cursor: pointer !important;
+}
+
+.footer1 text a,
+.footer text a {
+  cursor: pointer !important;
+}
+
+/* Align text and X with flexbox - X determines center */
+#myDIV text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#myDIV text font,
+#myDIV text a {
+  display: flex;
+  align-items: center;
+}
+
+
 .ImageBorder
 {
     border-width: 1px;
