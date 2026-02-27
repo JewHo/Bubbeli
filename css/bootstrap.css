@@ -446,13 +446,17 @@ ul#menu li {
   cursor: pointer !important;
 }
 
-/* Align X button with text in footer */
-.close1 {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: 1;
-  cursor: pointer !important;
-  margin-bottom: -0.25rem;  /* Pull X up */
+/* Align text and X with flexbox - X determines center */
+#myDIV text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#myDIV text font,
+#myDIV text a {
+  display: flex;
+  align-items: center;
 }
 
 
