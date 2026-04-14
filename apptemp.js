@@ -4,11 +4,7 @@
  */
 async function getArtistData() {
   try {
-    const artistId = '1439676537';
-
-    const response = await fetch(
-      `https://itunes.apple.com/lookup?id=${artistId}&entity=album&limit=200`
-    );
+    const response = await fetch('/.netlify/functions/fetch-keys');
 
     if (!response.ok) {
       throw new Error(`Apple lookup failed: ${response.status} ${response.statusText}`);
