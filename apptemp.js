@@ -1,8 +1,6 @@
 /**
  * Fetch albums for an Apple Music / iTunes artist by artist ID
  * and render them into #bubbelispotify.
- *
- * No auth token is required.
  */
 async function getArtistData() {
   try {
@@ -52,7 +50,7 @@ async function appendData(data) {
     }
   }
 
-  // ✅ SORT: newest first
+  // Sort by newest first
   uniqueAlbums.sort((a, b) => {
     const dateA = new Date(a.releaseDate || 0);
     const dateB = new Date(b.releaseDate || 0);
@@ -100,9 +98,6 @@ async function appendData(data) {
     heading2.style = "font-family:futura";
     heading2.className = "mt-2";
 
-    var heading3 = document.createElement("h5");
-    heading3.innerHTML = album.primaryGenreName || "Album";
-
     var heading4 = document.createElement("h8");
     heading4.style = "font-family:futura";
     heading4.innerHTML = album.releaseDate
@@ -125,7 +120,6 @@ async function appendData(data) {
     div6.appendChild(img);
     div7.appendChild(heading1);
     div7.appendChild(heading2);
-    div7.appendChild(heading3);
     div7.appendChild(heading4);
     div5.appendChild(div6);
     div5.appendChild(div7);
