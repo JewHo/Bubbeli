@@ -34,14 +34,13 @@ async function appendData(data) {
     return;
   }
 
-  // The first result is usually the artist record.
-  // Keep only actual album collections.
+  // Filter only albums
   const albumItems = data.results.filter((item) =>
     item.wrapperType === "collection" &&
     item.collectionType === "Album"
   );
 
-  // Remove duplicate albums by collectionId
+  // Remove duplicates
   const uniqueAlbums = [];
   const seen = new Set();
 
@@ -53,6 +52,14 @@ async function appendData(data) {
     }
   }
 
+  // ✅ SORT: newest first
+  uniqueAlbums.sort((a, b) => {
+    const dateA = new Date(a.releaseDate || 0);
+    const dateB = new Date(b.releaseDate || 0);
+    return dateB - dateA;
+  });
+
+  // Render
   for (let i = 0; i < uniqueAlbums.length; i++) {
     const album = uniqueAlbums[i];
     const itemId = album.collectionId || i;
@@ -99,7 +106,7 @@ async function appendData(data) {
     var heading4 = document.createElement("h8");
     heading4.style = "font-family:futura";
     heading4.innerHTML = album.releaseDate
-      ? new Date(album.releaseDate).toISOString().split("T")[0]
+      ? new Date(album.releaseDate).toLocaleDateString()
       : "";
 
     var div8 = document.createElement("div");
