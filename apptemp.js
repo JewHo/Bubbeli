@@ -1,95 +1,125 @@
 /**
- * This is an example of a basic node.js script that performs
- * the Client Credentials oAuth2 flow to authenticate against
- * the Spotify Accounts.
- *
- * For more information, read
- * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
+ * Fetch albums for an Apple Music / iTunes artist by artist ID
+ * and render them into #bubbelispotify.
  */
 async function getArtistData() {
-  const tokenResponse = await fetch('/.netlify/functions/fetch-keys').then((response) => response.json());
-  const access_token = tokenResponse.access_token
+  try {
+    const artistId = '1439676537';
 
-  const artistResponse = await fetch('https://api.spotify.com/v1/artists/2hUKFORuqeQo6iUSlTmOVq/albums?include_groups=album%2Csingle', {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + access_token
+    const response = await fetch(
+      `https://itunes.apple.com/lookup?id=${artistId}&entity=album&limit=200`
+    );
+
+    if (!response.ok) {
+      throw new Error(`Apple lookup failed: ${response.status} ${response.statusText}`);
     }
-  })
-  .then(response => response.json());
-  
-  await appendData(artistResponse);
-  
-  // Show the page once Spotify data is ready
-  document.body.style.display = 'block';
+
+    const data = await response.json();
+    await appendData(data);
+
+    document.body.style.display = 'block';
+  } catch (error) {
+    console.error('Error loading artist data:', error);
+  }
 }
 
 async function appendData(data) {
-  const albumItems = data.items;
-  var mainContainer = document.getElementById("bubbelispotify");
-  
-  for (var i = 0; i < albumItems.length; i++) {
+  const mainContainer = document.getElementById("bubbelispotify");
+  mainContainer.innerHTML = "";
+
+  if (!data || !Array.isArray(data.results)) {
+    console.error("Unexpected API response:", data);
+    return;
+  }
+
+  // Filter only albums
+  const albumItems = data.results.filter((item) =>
+    item.wrapperType === "collection" &&
+    item.collectionType === "Album"
+  );
+
+  // Remove duplicates
+  const uniqueAlbums = [];
+  const seen = new Set();
+
+  for (let i = 0; i < albumItems.length; i++) {
+    const album = albumItems[i];
+    if (!seen.has(album.collectionId)) {
+      seen.add(album.collectionId);
+      uniqueAlbums.push(album);
+    }
+  }
+
+  // Sort by newest first
+  uniqueAlbums.sort((a, b) => {
+    const dateA = new Date(a.releaseDate || 0);
+    const dateB = new Date(b.releaseDate || 0);
+    return dateB - dateA;
+  });
+
+  // Render
+  for (let i = 0; i < uniqueAlbums.length; i++) {
+    const album = uniqueAlbums[i];
+    const itemId = album.collectionId || i;
+
     var div1 = document.createElement("div");
-    div1.id = 'accordion';
+    div1.id = 'accordion-' + itemId;
+
     var div2 = document.createElement("div");
     div2.className = "card mt-4 border-bottom";
     div2.style = "border:0px";
+
     var div3 = document.createElement("div");
-    div3.id = 'heading'+albumItems[i].id;
+    div3.id = 'heading' + itemId;
+
     var div4 = document.createElement("div");
     div4.className = "mb-4 btn btn-link btn-wrap-text collapsed text-dark";
-    div4.setAttribute('onclick', "window.open('"+albumItems[i].external_urls.spotify+"');");
-    div4.setAttribute('data-toggle','collapse');
-    div4.setAttribute('data-target', '#collapse'+albumItems[i].id);
-    div4.setAttribute('aria-expanded','false');
-    div4.setAttribute('aria-controls','collapse'+albumItems[i].id);
+    div4.setAttribute('onclick', "window.open('" + album.collectionViewUrl + "', '_blank');");
+    div4.setAttribute('data-toggle', 'collapse');
+    div4.setAttribute('data-target', '#collapse' + itemId);
+    div4.setAttribute('aria-expanded', 'false');
+    div4.setAttribute('aria-controls', 'collapse' + itemId);
+
     var div5 = document.createElement("div");
     div5.className = "row";
+
     var div6 = document.createElement("div");
-    div6.className= "col-md-6 pl-0 pr-0 align-self-center";
+    div6.className = "col-md-6 pl-0 pr-0 align-self-center";
+
     var div7 = document.createElement("div");
-    div7.className= "col-md-6 pl-0 pr-0 align-self-center";
+    div7.className = "col-md-6 pl-0 pr-0 align-self-center";
+
     var heading1 = document.createElement("h5");
-    heading1.className= "mb-0";
+    heading1.className = "mb-0";
     heading1.innerHTML = " ";
+
     var heading2 = document.createElement("h5");
-    heading2.innerHTML = albumItems[i].name;
-    heading2.style = "font-family:futura"
-    heading2.className = "mt-2"
-    var heading3 = document.createElement("h5");
-    heading3.innerHTML = albumItems[i].album_type;
+    heading2.innerHTML = album.collectionName || "";
+    heading2.style = "font-family:futura";
+    heading2.className = "mt-2";
+
     var heading4 = document.createElement("h8");
     heading4.style = "font-family:futura";
-    heading4.innerHTML = albumItems[i].release_date;
+    heading4.innerHTML = album.releaseDate
+      ? new Date(album.releaseDate).toLocaleDateString()
+      : "";
+
     var div8 = document.createElement("div");
-    div8.id = 'collapse'+albumItems[i].id;
-    div8.className= "collapse";
-    div8.setAttribute('aria-labelledby','heading'+albumItems[i].id);
-    div8.setAttribute('data-parent','#accordion');
-    var heading5 = document.createElement("h2");
-    heading5.className = "card-title mt-3";
-    heading5.innerHTML = "Tracklist";
-    var heading6 = document.createElement("h4");
-    heading6.className = "card-title mt-3";
-    heading6.innerHTML = "Info";
+    div8.id = 'collapse' + itemId;
+    div8.className = "collapse";
+    div8.setAttribute('aria-labelledby', 'heading' + itemId);
+    div8.setAttribute('data-parent', '#accordion-' + itemId);
+
     var img = document.createElement("img");
-    img.src = albumItems[i].images[1].url;
+    img.src = (album.artworkUrl100 || "").replace("100x100bb", "300x300bb");
     img.className = "img-responsive rounded";
     img.width = "210";
     img.height = "210";
-    var divTracks = document.createElement("div");
-    divTracks.id = "accordion";
-    divTracks.style = "font-family:futura;";
-
-    var hr = document.createElement("div");
-    hr.innerHTML = "*"
+    img.alt = album.collectionName || "Album cover";
 
     div6.appendChild(img);
     div7.appendChild(heading1);
     div7.appendChild(heading2);
-    div7.appendChild(heading3);
     div7.appendChild(heading4);
     div5.appendChild(div6);
     div5.appendChild(div7);
